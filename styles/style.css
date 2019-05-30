@@ -3,26 +3,42 @@
 }
 body {
 	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+}
+a {
+	display: block;
+	float: left;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	transition-duration: 0.5s;
+	padding: 15px;
+}
+a:hover {
+	background-color: white;
+	color: black;
 }
 header {
-	background-color: #BFBFBF;
-	font-size: 2em;
+	background-color: #EFEFEF;
+	padding: 20px;
 	text-align: center;
-	height: 150px;
-	padding: 10px;
 }
-nav {
-	background-color: #DFDFDF;
+.topnav {
+	overflow: hidden;
+	background-color: #3F3F3F;
+}
+.side {
+	background-color: #BFBFBF;
 	float: left;
 	width: 30%;
-	height: 500px;
+	height: 400px;
 	padding: 20px;
 }
-article {
+.main {
 	background-color: #EFEFEF;
 	float: left;
 	width: 70%;
-	height: 500px;
+	height: 400px;
 	padding: 20px;
 }
 section:after {
@@ -31,23 +47,17 @@ section:after {
 	clear: both;
 }
 .button {
-	float: left;
-	color: black;
-	text-align: center;
-	text-decoration: none;
 	width: 200px;
 	padding: 10px;
 	border: 5px solid black;
 	border-radius: 15px;
 	margin: 20px 50px;
 }
-.button:hover {
-	background: white;
-}
 footer {
-	background-color: #BFBFBF;
+	background-color: #3F3F3F;
+	color: white;
 	font-style: italic;
 	text-align: center;
-	height: 100px;
+	height: 50px;
 	padding: 10px;
 }
