@@ -6,30 +6,32 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0px;
 }
+header {
+	background-color: #EFEFEF;
+	padding: 20px;
+	text-align: center;
+}
 a {
+	color: white;
+	text-decoration: none;
+}
+a.button {
 	display: block;
 	float: left;
-	color: white;
 	text-align: center;
-	text-decoration: none;
 	transition-duration: 0.5s;
 	padding: 15px;
+}
+a.active {
+	background-color: red;
 }
 a:hover:not(.active) {
 	background-color: white;
 	color: black;
 }
-a.active {
-	background-color: red;
-}
 .topnav {
 	overflow: hidden;
 	background-color: #3F3F3F;
-}
-header {
-	background-color: #EFEFEF;
-	padding: 20px;
-	text-align: center;
 }
 .side {
 	background-color: #BFBFBF;
