@@ -3,16 +3,16 @@
 }
 body {
 	background-color: #3F3F3F;
-	font-family: Arial, Helvetica, sans-serif;
 	margin: 0px;
+	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
 }
 header {
-	background-color: #EFEFEF;
+	background-color: antiquewhite;
 	padding: 20px;
 	text-align: center;
 }
 a {
-	color: white;
+	color: antiquewhite;
 	text-decoration: none;
 }
 a.button {
@@ -26,7 +26,7 @@ a.active {
 	background-color: red;
 }
 a:hover:not(.active) {
-	background-color: white;
+	background-color: antiquewhite;
 	color: black;
 }
 .topnav {
@@ -34,14 +34,14 @@ a:hover:not(.active) {
 	background-color: #3F3F3F;
 }
 .side {
-	background-color: #BFBFBF;
+	background-color: sandybrown;
 	float: left;
 	width: 20%;
 	height: 400px;
 	padding: 20px;
 }
 .main {
-	background-color: #EFEFEF;
+	background-color: antiquewhite;
 	float: left;
 	width: 80%;
 	height: 400px;
@@ -54,7 +54,7 @@ section:after {
 }
 footer {
 	background-color: #3F3F3F;
-	color: white;
+	color: sandybrown;
 	font-style: italic;
 	text-align: center;
 	padding: 15px;
