@@ -35,29 +35,32 @@ li a{
 	color: var(--secondary-color);
 	text-align: center;
 }
+li a.right {
+	float: right;
+}
 a.active {
 	background-color: var(--accent-color);
 	color: var(--background-color);
 }
 a:hover:not(.active) {
-	background-color: var(--secondary-color);
+	background-color: var(--accent-color);
 	color: var(--background-color);
 }
-.side {
+aside {
 	background-color: var(--secondary-color);
 	float: left;
 	width: 20%;
 	height: 400px;
 	padding: 20px;
 }
-.main {
+article {
 	background-color: var(--primary-color);
 	float: left;
 	width: 80%;
 	height: 400px;
 	padding: 20px;
 }
-section:after {
+main:after {
 	content: "";
 	display: table;
 	clear: both;
