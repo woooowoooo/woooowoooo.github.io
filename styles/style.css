@@ -15,12 +15,18 @@ a {
 	color: antiquewhite;
 	text-decoration: none;
 }
-a.button {
-	display: block;
+ul {
+	background-color: #3F3F3F;
+	overflow: hidden;
+	margin: 0px;
+	list-style-type: none;
+}
+li a{
+	display: inline;
 	float: left;
-	text-align: center;
-	transition-duration: 0.5s;
 	padding: 15px;
+	transition-duration: 0.5s;
+	text-align: center;
 }
 a.active {
 	background-color: red;
@@ -28,10 +34,6 @@ a.active {
 a:hover:not(.active) {
 	background-color: antiquewhite;
 	color: black;
-}
-.topnav {
-	overflow: hidden;
-	background-color: #3F3F3F;
 }
 .side {
 	background-color: sandybrown;
@@ -54,8 +56,8 @@ section:after {
 }
 footer {
 	background-color: #3F3F3F;
+	padding: 15px;
 	color: sandybrown;
 	font-style: italic;
 	text-align: center;
-	padding: 15px;
 }
