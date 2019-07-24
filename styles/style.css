@@ -10,6 +10,7 @@
 body {
 	background-color: var(--background-color);
 	margin: 0px;
+	color: var(--background-color);
 	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
 }
 header {
