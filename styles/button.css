@@ -1,16 +1,17 @@
-.button {
+button {
+	background-color: var(--4color);
+	display: inline-block;
 	width: 200px;
-	border: 5px solid black;
-	border-radius: 15px;
-	margin: 20px 50px;
+	padding: 25px;
+	border: none;
+	margin: 25px;
+	transition-duration: 0.5s;
+	color: var(--3color);
+	text-align: center;
+	font-size: 1em;
+	cursor: pointer;
 }
-.buttonimg {  
-	width: 200px;
-	border: 5px solid black;
-	border-radius: 15px;
-	margin: -20px;
-}
-.buttontext {
-	width: 200px;
-	position: center;
+button:hover {
+	background-color: var(--2color);
+	color: var(--1color);
 }

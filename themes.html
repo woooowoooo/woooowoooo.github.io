@@ -24,10 +24,46 @@
 		</ul>
 		<main>
 			<aside>
-				Place buttons here showing themes, redo buttons.css, figure out how to apply a theme globally.
+				Figure out how to apply a theme globally.
+				<noscript>
+					This theme thingy is run on Javascript, and evidently your browser (or you) doesn't, so no theme changing for you.
+				</noscript>
 			</aside>
 			<article>
-				Hmm.
+				<br/>
+				<button style="
+					--1color: wheat;
+					--2color: peru;
+					--3color: orangered;
+					--4color: #3F3F3F;
+				">Regular</button>
+				<button style="
+					--1color: #EFEFEF;
+					--2color: #DFDFDF;
+					--3color: #7F7F7F;
+					--4color: #3F3F3F;
+				">Grayscale</button>
+				<button style="
+					--1color: black;
+					--2color: #1F1F1F;
+					--3color: darkred;
+					--4color: #5F5F5F;
+				">Dark</button>
+				<button style="
+					--1color: mediumaquamarine;
+					--2color: lightcoral;
+					--3color: deepskyblue;
+					--4color: navy;
+				">Aquatic</button>
+				<button style="
+					--1color: mediumvioletred;
+					--2color: mediumorchid;
+					--3color: plum;
+					--4color: purple;
+				">Majestic</button>
+				<button>Forest</button>
+				<button>Dark theme</button>
+				<button>Dark theme</button>
 			</article>
 		</main>
 		<footer>
@@ -41,5 +77,24 @@
 				Creative Commons Attribution-ShareAlike 4.0 International License
 			</a>
 		</footer>
+		<script>
+			var theRoot = document.documentElement.style;
+			var buttons = document.getElementsByTagName("button");
+			for (var i = 0; i < buttons.length; i++) {
+				buttons[i].addEventListener("click", changeTheme);
+			};
+			function changeTheme() {
+				var buttonColor = event.target.style;
+				var color1 = buttonColor.getPropertyValue('--1color');
+				var color2 = buttonColor.getPropertyValue('--2color');
+				var color3 = buttonColor.getPropertyValue('--3color');
+				var color4 = buttonColor.getPropertyValue('--4color');
+				alert("Theme change function run");
+				theRoot.setProperty("--primary-color", color1);
+				theRoot.setProperty("--secondary-color", color2);
+				theRoot.setProperty("--accent-color", color3);
+				theRoot.setProperty("--background-color", color4);
+			};
+		</script>
 	</body>
 </html>
