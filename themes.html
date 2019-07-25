@@ -7,6 +7,7 @@
 		</title>
 		<link rel="stylesheet" type="text/css" href="styles/main.css">
 		<link rel="stylesheet" type="text/css" href="styles/themes.css">
+		<script type="text/javascript" language="javascript" src="styles/localstorage.js"></script>
 	</head>
 	<body>
 		<header>
@@ -51,24 +52,6 @@
 				Creative Commons Attribution-ShareAlike 4.0 International License
 			</a>
 		</footer>
-		<script>
-			var theRoot = document.documentElement.style;
-			var buttons = document.getElementsByTagName("button");
-			for (var i = 0; i < buttons.length; i++) {
-				buttons[i].addEventListener("click", changeTheme);
-			};
-			function changeTheme() {
-				var buttonColor = event.target.style;
-				var color1 = buttonColor.getPropertyValue('--1color');
-				var color2 = buttonColor.getPropertyValue('--2color');
-				var color3 = buttonColor.getPropertyValue('--3color');
-				var color4 = buttonColor.getPropertyValue('--4color');
-				alert("Theme change function run");
-				theRoot.setProperty("--primary-color", color1);
-				theRoot.setProperty("--secondary-color", color2);
-				theRoot.setProperty("--accent-color", color3);
-				theRoot.setProperty("--background-color", color4);
-			};
-		</script>
+		<script type="text/javascript" language="javascript" src="styles/themechange.js"></script>
 	</body>
 </html>
