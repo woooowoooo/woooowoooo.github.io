@@ -1,0 +1,65 @@
+button {
+	background-color: var(--1color);
+	display: inline-block;
+	width: 200px;
+	padding: 25px;
+	border: none;
+	margin: 25px;
+	transition-duration: 0.5s;
+	color: var(--3color);
+	text-align: center;
+	font-size: 1em;
+	cursor: pointer;
+}
+button:hover {
+	background-color: var(--4color);
+	color: var(--2color);
+}
+#default {
+	--1color: wheat;
+	--2color: peru;
+	--3color: orangered;
+	--4color: #3F3F3F;
+}
+#grayscale {
+	--1color: #EFEFEF;
+	--2color: #DFDFDF;
+	--3color: #7F7F7F;
+	--4color: #3F3F3F;
+}
+#dark {
+	--1color: black;
+	--2color: #1F1F1F;
+	--3color: limegreen;
+	--4color: #5F5F5F;
+}
+#aquatic {
+	--1color: mediumaquamarine;
+	--2color: cornflowerblue;
+	--3color: lightcoral;
+	--4color: navy;
+}
+#majestic {
+	--1color: palevioletred;
+	--2color: rosybrown;
+	--3color: thistle;
+	--4color: purple;
+}
+#forest {
+	--1color: forestgreen;
+	--2color: burlywood;
+	--3color: yellowgreen;
+	--4color: saddlebrown;
+}
+#red {
+	--1color: lightcoral;
+	--2color: firebrick;
+	--3color: red;
+	--4color: #3F3F3F;
+}
+#blue {
+	--1color: powderblue;
+	--2color: steelblue;
+	--3color: cornflowerblue;
+	--4color: #3F3F3F;
+}
