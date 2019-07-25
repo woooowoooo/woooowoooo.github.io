@@ -13,4 +13,8 @@ function changeTheme() {
 	theRoot.setProperty("--secondary-color", color2);
 	theRoot.setProperty("--accent-color", color3);
 	theRoot.setProperty("--background-color", color4);
+	localStorage.setItem("color1Local", color1);
+	localStorage.setItem("color2Local", color2);
+	localStorage.setItem("color3Local", color3);
+	localStorage.setItem("color4Local", color4);
 };
