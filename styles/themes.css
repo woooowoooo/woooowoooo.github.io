@@ -35,26 +35,38 @@ button:hover {
 }
 #aquatic {
 	--1color: mediumaquamarine;
-	--2color: cornflowerblue;
-	--3color: lightcoral;
-	--4color: navy;
+	--2color: #3F3F3F;
+	--3color: sandybrown;
+	--4color: darkcyan;
 }
 #majestic {
 	--1color: palevioletred;
-	--2color: rosybrown;
-	--3color: thistle;
-	--4color: purple;
+	--2color: lightsalmon;
+	--3color: lightcoral;
+	--4color: #BA5555;
 }
 #forest {
-	--1color: forestgreen;
-	--2color: burlywood;
-	--3color: yellowgreen;
+	--1color: olivedrab;
+	--2color: yellowgreen;
+	--3color: burlywood;
 	--4color: saddlebrown;
 }
+#iceland {
+	--1color: #AEBD38;
+	--2color: lightsteelblue;
+	--3color: olivedrab;
+	--4color: #505160;
+}
 #red {
-	--1color: lightcoral;
+	--1color: salmon;
 	--2color: firebrick;
 	--3color: red;
+	--4color: #3F3F3F;
+}
+#green {
+	--1color: lightgreen;
+	--2color: forestgreen;
+	--3color: limegreen;
 	--4color: #3F3F3F;
 }
 #blue {
