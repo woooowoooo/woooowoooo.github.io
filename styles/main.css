@@ -43,19 +43,23 @@ header {
 	background-color: var(--accent-color);
 	color: var(--background-color);
 }
+#open-icon, #close-icon {
+	display: none;
+	width: 100px;
+	height: 100px;
 }
 aside {
 	background-color: var(--secondary-color);
 	float: left;
 	width: 20%;
-	height: 400px;
+	height: 600px;
 	padding: 20px;
 }
 article {
 	background-color: var(--primary-color);
 	float: left;
 	width: 80%;
-	height: 400px;
+	height: 600px;
 	padding: 20px;
 }
 main:after {
@@ -69,4 +73,16 @@ footer {
 	color: var(--primary-color);
 	font-style: italic;
 	text-align: center;
+}
+@media (max-width: 800px) {
+	header {
+		background-color: var(--background-color);
+		color: var(--secondary-color);
+	}
+	#navbar * {
+		display: none;
+	}
+	#open-icon {
+		display: inline;
+	}
 }
