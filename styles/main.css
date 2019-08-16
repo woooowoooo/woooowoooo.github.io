@@ -11,16 +11,16 @@ body {
 	background-color: var(--background-color);
 	margin: 0px;
 	color: var(--background-color);
-	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+	font-family: "Century Gothic", "Apple Gothic", AppleGothic, sans-serif;
+}
+a {
+	color: var(--accent-color);
+	text-decoration: none;
 }
 header {
 	background-color: var(--primary-color);
 	padding: 20px;
 	text-align: center;
-}
-a {
-	color: var(--accent-color);
-	text-decoration: none;
 }
 #navbar {
 	background-color: var(--background-color);
