@@ -22,13 +22,13 @@ a {
 	color: var(--accent-color);
 	text-decoration: none;
 }
-ul {
+#navbar {
 	background-color: var(--background-color);
 	overflow: hidden;
 	margin: 0px;
 	list-style-type: none;
 }
-li a{
+#navbar a{
 	display: inline;
 	float: left;
 	padding: 15px;
@@ -36,16 +36,13 @@ li a{
 	color: var(--secondary-color);
 	text-align: center;
 }
-li a.right {
+#navbar a.right {
 	float: right;
 }
-a.active {
+#navbar a.active, #navbar a:hover:not(.active), a:hover {
 	background-color: var(--accent-color);
 	color: var(--background-color);
 }
-a:hover:not(.active) {
-	background-color: var(--accent-color);
-	color: var(--background-color);
 }
 aside {
 	background-color: var(--secondary-color);
