@@ -1,15 +1,6 @@
 button {
 	background-color: var(--1color);
-	display: inline-block;
-	width: 200px;
-	padding: 25px;
-	border: none;
-	margin: 25px;
-	transition-duration: 0.5s;
 	color: var(--3color);
-	text-align: center;
-	font-size: 1em;
-	cursor: pointer;
 }
 button:hover {
 	background-color: var(--4color);

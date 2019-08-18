@@ -17,6 +17,19 @@ a {
 	color: var(--accent-color);
 	text-decoration: none;
 }
+button, .button {
+	background-color: var(--background-color);
+	display: inline-block;
+	width: 200px;
+	padding: 25px;
+	border: none;
+	margin: 25px;
+	transition-duration: 0.5s;
+	color: var(--accent-color);
+	text-align: center;
+	font-size: 1em;
+	cursor: pointer;
+}
 header {
 	background-color: var(--primary-color);
 	padding: 20px;
@@ -39,7 +52,7 @@ header {
 #navbar a.right {
 	float: right;
 }
-#navbar a.active, #navbar a:hover:not(.active), a:hover {
+#navbar a.active, #navbar a:hover:not(.active), a:hover, button:hover {
 	background-color: var(--accent-color);
 	color: var(--background-color);
 }
@@ -48,19 +61,32 @@ header {
 	width: 100px;
 	height: 100px;
 }
+main {
+	background-color: var(--primary-color);
+	width: 100%;
+	height: 640px;
+}
 aside {
 	background-color: var(--secondary-color);
 	float: left;
 	width: 20%;
-	height: 600px;
+	height: 640px;
 	padding: 20px;
 }
 article {
-	background-color: var(--primary-color);
 	float: left;
 	width: 80%;
-	height: 600px;
+	height: 640px;
 	padding: 20px;
+}
+canvas {
+	background-color: var(--secondary-color);
+	position: absolute;
+	left: 50%;
+	width: 960px;
+	height: 640px;
+	margin-right: -50%;
+	transform: translate(-50%);
 }
 main:after {
 	content: "";
