@@ -1,4 +1,8 @@
 var footer = document.querySelector("footer");
+var pathArray = location.href.split("/");
+var find = "woooowoooo.github.io";
+var childAmount = pathArray.length - pathArray.indexOf(find) - 2;
+var parentPath = "../";
 function createLicense(type) {
 	var license = document.createElement("a");
 	license.rel = "license";
@@ -6,6 +10,7 @@ function createLicense(type) {
 	if (type == "image") {
 		var licenseImg = document.createElement("img");
 		licenseImg.alt = "CC BY-SA 4.0 (image could not be shown)";
+		licenseImg.src = parentPath.repeat(childAmount) + "images/CC-BYSA-license.png";
 		licenseImg.style.borderWidth = 0;
 		license.appendChild(licenseImg);
 	} else {
