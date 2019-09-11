@@ -57,9 +57,13 @@ header {
 	color: var(--background-color);
 }
 #open-icon, #close-icon {
+	position: absolute;
+	top: 0;
+	left: 0;
 	display: none;
-	width: 100px;
-	height: 100px;
+	width: 150px;
+	font-size: 3em;
+	cursor: pointer;
 }
 main {
 	background-color: var(--primary-color);
@@ -79,15 +83,6 @@ article {
 	height: 640px;
 	padding: 20px;
 }
-canvas {
-	background-color: var(--secondary-color);
-	position: absolute;
-	left: 50%;
-	width: 960px;
-	height: 640px;
-	margin-right: -50%;
-	transform: translate(-50%);
-}
 main:after {
 	content: "";
 	display: table;
@@ -100,15 +95,24 @@ footer {
 	font-style: italic;
 	text-align: center;
 }
-@media (max-width: 800px) {
+@media (max-width: 1080px) {
 	header {
 		background-color: var(--background-color);
 		color: var(--secondary-color);
 	}
-	#navbar * {
+	#navbar:not(.shown) {
 		display: none;
 	}
-	#open-icon {
-		display: inline;
+	#open-icon:not(.hidden) {
+		display: block;
+	}
+	#close-icon:not(.hidden) {
+		display: block;
+	}
+}
+@media (max-width: 800px) {
+	main, aside, article {
+		width: 100%;
+		height: auto;
 	}
 }
