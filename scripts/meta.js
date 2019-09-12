@@ -6,3 +6,4 @@ function createMeta(name, content) {
 	head.appendChild(meta);
 }
 createMeta("author", "Ryan Z.");
+createMeta("viewport", "width=device-width, initial-scale=1.0");

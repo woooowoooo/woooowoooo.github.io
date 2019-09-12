@@ -103,16 +103,16 @@ footer {
 	#navbar:not(.shown) {
 		display: none;
 	}
-	#open-icon:not(.hidden) {
-		display: block;
-	}
-	#close-icon:not(.hidden) {
+	#open-icon:not(.hidden), #close-icon:not(.hidden) {
 		display: block;
 	}
 }
-@media (max-width: 800px) {
-	main, aside, article {
+@media (max-width: 720px) {
+	main, aside, article, #navbar a {
 		width: 100%;
 		height: auto;
+	}
+	#navbar {
+		padding: 0;
 	}
 }
