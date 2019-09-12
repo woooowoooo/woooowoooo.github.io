@@ -18,3 +18,7 @@ function changeTheme() {
 	localStorage.setItem("color3Local", color3);
 	localStorage.setItem("color4Local", color4);
 };
+document.getElementById("clear").addEventListener("click", clearStorage());
+function clearStorage() {
+	localStorage.clear();
+};
