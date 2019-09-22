@@ -30,6 +30,10 @@ button, .button {
 	font-size: 1em;
 	cursor: pointer;
 }
+hr {
+	border-style: solid;
+	color: var(--background-color);
+}
 header {
 	background-color: var(--primary-color);
 	padding: 20px;
