@@ -1,0 +1,22 @@
+:root {
+	--canvas-width: 960px;
+	--canvas-height: 640px;
+}
+canvas {
+	background-color: var(--secondary-color);
+	position: absolute;
+	left: 50%;
+	width: var(--canvas-width);
+	height: var(--canvas-height);
+	margin-right: -50%;
+	transform: translate(-50%);
+}
+main {
+	height: var(--canvas-height);
+}
+@media (max-width: 960px) {
+	:root {
+		--canvas-width: 480px;
+		--canvas-height: 320px;
+	}
+}
