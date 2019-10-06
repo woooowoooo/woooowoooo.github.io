@@ -1,0 +1,27 @@
+To-do:
+
+• ✓ This page
+• ✓ House selector
+• ✓ Navbar
+• ✓ End SS project
+Content:
+	• ✓ More links
+	• ✓ TL;DR feature
+	•Content update
+Organization:
+	• ✓ Navbar migration
+	• ✓ Footer migration
+	• ✓ Meta tag migration
+	•Sitemap
+Graphics:
+	• ✓ Graphics update
+	• ✓ Theme changing
+	• ✓ Theme storage
+	• ✓ Color update
+	• ✓ Font size readability
+	•Quality themes
+Device and browser support:
+	• ✓ Mobile layout
+	•Other browser support
+Terrible baby adventure game:
+	• ✓ Basic canvas stuff
