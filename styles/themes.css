@@ -7,22 +7,22 @@ button:hover {
 	color: var(--3color);
 }
 #default {
-	--1color: wheat;
-	--2color: peru;
+	--1color: navajowhite;
+	--2color: chocolate;
 	--3color: orangered;
 	--4color: #3F3F3F;
 }
 #grayscale {
 	--1color: #EFEFEF;
-	--2color: #DFDFDF;
-	--3color: #7F7F7F;
+	--2color: lightgray;
+	--3color: gray;
 	--4color: #3F3F3F;
 }
 #dark {
 	--1color: black;
 	--2color: #2F2F2F;
-	--3color: limegreen;
-	--4color: gray;
+	--3color: lime;
+	--4color: #6F6F6F;
 }
 #aquatic {
 	--1color: mediumaquamarine;
@@ -38,25 +38,25 @@ button:hover {
 }
 #forest {
 	--1color: olive;
-	--2color: #D5CE6D;
-	--3color: burlywood;
-	--4color: saddlebrown;
+	--2color: #C1A748;
+	--3color: khaki;
+	--4color: #66320A;
 }
 #sunrise {
 	--1color: #F3B88D;
 	--2color: indianred;
 	--3color: #FCECCB;
-	--4color: #4A2F48;
+	--4color: #582F44;
 }
 #tundra {
-	--1color: #AEBD38;
-	--2color: lightsteelblue;
+	--1color: #C3D741;
+	--2color: #C4D0DF;
 	--3color: olivedrab;
 	--4color: #505160;
 }
 #red {
 	--1color: lightsalmon;
-	--2color: #C21807;
+	--2color: #DC1E09;
 	--3color: red;
 	--4color: #3F3F3F;
 }
