@@ -1,3 +1,11 @@
+/* My order in property listing is:
+	position, left, top, display, background-color
+	width, height, padding, border, margin
+	text-align, color, font (size, family),
+	font (weight, style, variant), text-decoration
+	transition-duration, list-style-type
+	cursor */
+/* General items */
 * {
 	box-sizing: border-box;
 }
@@ -9,47 +17,46 @@
 }
 body {
 	background-color: var(--background-color);
-	margin: 0px;
+	margin: 0;
 	color: var(--background-color);
-	font-family: "Century Gothic", "Apple Gothic", AppleGothic, sans-serif;
+	font-size: 18px;
+	font-family: 'Century Gothic', AppleGothic, sans-serif;
 }
 a {
 	color: var(--accent-color);
 	text-decoration: none;
 }
 button, .button {
-	background-color: var(--background-color);
 	display: inline-block;
+	background-color: var(--background-color);
 	width: 200px;
 	padding: 25px;
 	border: none;
 	margin: 25px;
-	transition-duration: 0.5s;
-	color: var(--accent-color);
 	text-align: center;
+	color: var(--accent-color);
 	font-size: 1em;
+	font-family: 'Century Gothic', AppleGothic, sans-serif;
+	transition-duration: .5s;
 	cursor: pointer;
 }
 hr {
 	border-style: solid;
 	color: var(--background-color);
 }
-header {
-	background-color: var(--primary-color);
-	padding: 20px;
-	text-align: center;
-}
+/* Navbar */
 #navbar {
 	background-color: var(--background-color);
 	overflow: hidden;
-	margin: 0px;
+	margin: 0;
+	color: var(--accent-color);
 	list-style-type: none;
 }
 #navbar a{
 	display: inline;
 	float: left;
 	padding: 15px;
-	transition-duration: 0.5s;
+	transition-duration: .5s;
 	color: var(--secondary-color);
 	text-align: center;
 }
@@ -69,7 +76,12 @@ header {
 	font-size: 3em;
 	cursor: pointer;
 }
+/* Layout */
+header {
 	background-color: var(--primary-color);
+	padding: 20px;
+	text-align: center;
+}
 #flex {
 	display: flex;
 }
@@ -87,9 +99,10 @@ footer {
 	background-color: var(--background-color);
 	padding: 15px;
 	color: var(--primary-color);
-	font-style: italic;
 	text-align: center;
+	font-style: italic;
 }
+/* Responsive design */
 @media (max-width: 1080px) {
 	header {
 		background-color: var(--background-color);
