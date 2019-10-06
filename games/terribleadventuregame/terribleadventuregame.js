@@ -8,15 +8,23 @@ canvas.width = screenSize.x;
 canvas.height = screenSize.y;
 const ctx = canvas.getContext("2d");
 ctx.imageSmoothingEnabled = false;
-var start = {
-	loaded: false,
-	media: new Image()
-};
-var theme = {
-	loaded: false,
-	media: new Audio(),
-	type: "audio/mpeg"
+function getMedia(thing, path, audio) {
+	thing.loaded = false;
+	if (audio) {
+		thing.media = new Audio();
+		thing.type = "audio/mpeg";
+	} else {
+		thing.media = new Image();
+	}
+	thing.media.src = path;
+	thing.media.onload = function() {
+		thing.loaded = true;
+	}
 }
+var start = {};
+getMedia(start, "images/start.png", false);
+var theme = {};
+getMedia(theme, "sounds/theme.mp3", true);
 var baby = {
 	name: "Zoosmell Pooplord",
 	age: 0,
@@ -24,14 +32,6 @@ var baby = {
 	speech: 0,
 	strength: 0
 };
-function getMedia(thing, path) {
-	thing.media.src = path;
-	thing.media.onload = function() {
-		thing.loaded = true;
-	}
-}
-getMedia(start, "images/start.png");
-getMedia(theme, "theme.mp3");
 //Noting input
 var keysPressed = {};
 var clicked = false;
@@ -76,8 +76,10 @@ var pause = function() {
 			ctx.textAlign = "center";
 			ctx.fillStyle = "rgba(255, 255, 255, 1)";
 			ctx.fillText("PAUSED", screenSize.x / 2, screenSize.y / 4);
+			theme.media.pause();
 		} else {
 			ctx.clearRect(0, 0, screenSize.x, screenSize.y);
+			theme.media.play();
 		}
 		pPressed = true;
 	} else if (!("KeyP" in keysPressed)) {
@@ -88,6 +90,9 @@ var pause = function() {
 var render = function() {
 	if (start.loaded) {
 		ctx.drawImage(start.media, 0, 0, screenSize.x, screenSize.y);
+	}
+	if (theme.loaded) {
+		theme.media.play();
 	}
 }
 //Game loop
