@@ -32,7 +32,8 @@ var closeIcon = document.createElement("h1");
 closeIcon.id = "close-icon";
 closeIcon.classList.add("hidden");
 closeIcon.appendChild(document.createTextNode("《"));
-header.prepend(openIcon, closeIcon);
+header.appendChild(openIcon);
+header.appendChild(closeIcon);
 openIcon.addEventListener("click", function() {
 	navbar.classList.add("shown");
 	closeIcon.classList.remove("hidden");
