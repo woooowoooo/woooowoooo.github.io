@@ -40,6 +40,10 @@ button, .button {
 	transition-duration: .5s;
 	cursor: pointer;
 }
+.button.image {
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 hr {
 	border-style: solid;
 	color: var(--background-color);
@@ -114,15 +118,26 @@ footer {
 	#open-icon:not(.hidden), #close-icon:not(.hidden) {
 		display: block;
 	}
+	aside {
+		width: 33%;
+	}
+	main {
+		width: 67%;
+	}
 }
-@media (max-width: 720px) {
+@media (max-width: 600px) {
+	body {
+		font-size: 15px;
+	}
 	aside, main {
 		display: block;
 		width: 100%;
 	}
 	#navbar a {
+		width: 50%;
+	}
+	#navbar a.right {
 		width: 100%;
-		height: auto;
 	}
 	#navbar {
 		padding: 0;
