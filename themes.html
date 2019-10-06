@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 	<head>
 		<meta charset="UTF-8">
 		<title>The webpage of Ryan Z.</title>
-		<link rel="stylesheet" type="text/css" href="styles/main.css">
-		<link rel="stylesheet" type="text/css" href="styles/themes.css">
+		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="styles/themes.css">
 	</head>
 	<body>
 		<header>
@@ -13,13 +13,13 @@
 		<ul id="navbar">
 			If you see this, the navbar script did not load.
 		</ul>
-		<main>
+		<div id="flex">
 			<aside>
-				TL;DR: <br/>
+				TL;DR:<br>
 				There are 10 buttons that change the appearance of this website. Uses local storage.
 				<noscript>This theme thingy is run on Javascript, and evidently your browser (or you) does(do) not, so no theme changing for you.</noscript>
 			</aside>
-			<article>
+			<main>
 				<button id="default">Default</button>
 				<button id="grayscale">Grayscale</button>
 				<button id="dark">Dark</button>
@@ -32,15 +32,15 @@
 				<button id="green">Green</button>
 				<button id="blue">Blue</button>
 				<button id="clear">CLEAR STORAGE</button>
-			</article>
-		</main>
+			</main>
+		</div>
 		<footer>
 			If you see this, the footer script didn't load either.
 		</footer>
-		<script type="text/javascript" language="javascript" src="scripts/localstorage.js"></script>
-		<script type="text/javascript" language="javascript" src="styles/themechange.js"></script>
-		<script type="text/javascript" language="javascript" src="scripts/navbar.js"></script>
-		<script type="text/javascript" language="javascript" src="scripts/footer.js"></script>
-		<script type="text/javascript" language="javascript" src="scripts/meta.js"></script>
+		<script src="scripts/localstorage.js"></script>
+		<script src="styles/themechange.js"></script>
+		<script src="scripts/navbar.js"></script>
+		<script src="scripts/footer.js"></script>
+		<script src="scripts/meta.js"></script>
 	</body>
 </html>
