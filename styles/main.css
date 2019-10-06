@@ -1,6 +1,7 @@
 /* My order in property listing is:
-	position, left, top, display, background-color
+	position, left, top, display, flex, background-color
 	width, height, padding, border, margin
+	line-height
 	text-align, color, font (size, family),
 	font (weight, style, variant), text-decoration
 	transition-duration, list-style-type
@@ -49,6 +50,15 @@ hr {
 	color: var(--background-color);
 }
 /* Navbar */
+header {
+	background-color: var(--primary-color);
+	padding: 20px;
+	line-height: 1.25;
+	text-align: center;
+}
+header h1 {
+	flex: auto;
+}
 #navbar {
 	background-color: var(--background-color);
 	overflow: hidden;
@@ -72,20 +82,15 @@ hr {
 	color: var(--background-color);
 }
 #open-icon, #close-icon {
-	position: absolute;
-	top: 0;
-	left: 0;
 	display: none;
-	width: 150px;
+	flex: none;
+	width: 100px;
+	padding: calc(1.43em / 6);
+	margin: 0;
 	font-size: 3em;
 	cursor: pointer;
 }
 /* Layout */
-header {
-	background-color: var(--primary-color);
-	padding: 20px;
-	text-align: center;
-}
 #flex {
 	display: flex;
 }
@@ -109,14 +114,19 @@ footer {
 /* Responsive design */
 @media (max-width: 1080px) {
 	header {
+		display: flex;
 		background-color: var(--background-color);
 		color: var(--secondary-color);
 	}
+	#open-icon.shown, #close-icon.shown {
+		display: inline;
+	}
+	#navbar {
+		padding: 0;
+		font-size: 15px;
+	}
 	#navbar:not(.shown) {
 		display: none;
-	}
-	#open-icon:not(.hidden), #close-icon:not(.hidden) {
-		display: block;
 	}
 	aside {
 		width: 33%;
@@ -125,11 +135,11 @@ footer {
 		width: 67%;
 	}
 }
-@media (max-width: 600px) {
+@media (max-width: 625px) {
 	body {
 		font-size: 15px;
 	}
-	aside, main {
+	#flex, aside, main {
 		display: block;
 		width: 100%;
 	}

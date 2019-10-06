@@ -27,20 +27,20 @@ themes.classList.add("right");
 var header = document.getElementsByTagName("header")[0];
 var openIcon = document.createElement("h1");
 openIcon.id = "open-icon";
+openIcon.classList.add("shown");
 openIcon.appendChild(document.createTextNode("》"));
 var closeIcon = document.createElement("h1");
 closeIcon.id = "close-icon";
-closeIcon.classList.add("hidden");
 closeIcon.appendChild(document.createTextNode("《"));
 header.appendChild(openIcon);
 header.appendChild(closeIcon);
 openIcon.addEventListener("click", function() {
 	navbar.classList.add("shown");
-	closeIcon.classList.remove("hidden");
-	openIcon.classList.add("hidden");
+	closeIcon.classList.add("shown");
+	openIcon.classList.remove("shown");
 }, false);
 closeIcon.addEventListener("click", function() {
 	navbar.classList.remove("shown");
-	closeIcon.classList.add("hidden");
-	openIcon.classList.remove("hidden");
+	closeIcon.classList.remove("shown");
+	openIcon.classList.add("shown");
 }, false);
