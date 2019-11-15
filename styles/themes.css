@@ -4,71 +4,89 @@ button {
 }
 button:hover {
 	background-color: var(--2color);
-	color: var(--3color);
+	color: var(--5color);
 }
 #default {
 	--1color: navajowhite;
 	--2color: chocolate;
 	--3color: orangered;
 	--4color: #3F3F3F;
+	--5color: #3F3F3F;
 }
 #grayscale {
 	--1color: #EFEFEF;
 	--2color: lightgray;
 	--3color: gray;
 	--4color: #3F3F3F;
+	--5color: #3F3F3F;
 }
 #dark {
-	--1color: black;
-	--2color: #2F2F2F;
-	--3color: lime;
-	--4color: #6F6F6F;
+	--1color: #372F2F;
+	--2color: #473F3F;
+	--3color: navajowhite;
+	--4color: chocolate;
+	--5color: linen;
+}
+#neutral {
+	--1color: whitesmoke;
+	--2color: skyblue;
+	--3color: red;
+	--4color: #3F3F3F;
+	--5color: #3F3F3F;
 }
 #aquatic {
-	--1color: mediumaquamarine;
+	--1color: skyblue;
 	--2color: darkcyan;
 	--3color: sandybrown;
 	--4color: #3F3F3F;
+	--5color: #3F3F3F;
 }
 #desert {
-	--1color: burlywood;
+	--1color: #E0A458;
 	--2color: navajowhite;
-	--3color: sandybrown;
+	--3color: #C3D741;
 	--4color: sienna;
+	--5color: #733F0C;
 }
 #forest {
 	--1color: olive;
 	--2color: #C1A748;
 	--3color: khaki;
 	--4color: #66320A;
+	--5color: #66320A;
 }
 #sunrise {
 	--1color: #F3B88D;
 	--2color: indianred;
 	--3color: #FCECCB;
 	--4color: #582F44;
+	--5color: #582F44;
 }
 #tundra {
 	--1color: #C3D741;
 	--2color: #C4D0DF;
 	--3color: olivedrab;
 	--4color: #505160;
+	--5color: #3F3F3F;
 }
 #red {
 	--1color: lightsalmon;
 	--2color: #DC1E09;
 	--3color: red;
 	--4color: #3F3F3F;
+	--5color: #3F3F3F;
 }
 #green {
 	--1color: yellowgreen;
 	--2color: forestgreen;
 	--3color: lawngreen;
 	--4color: #3F3F3F;
+	--5color: #3F3F3F;
 }
 #blue {
 	--1color: powderblue;
 	--2color: steelblue;
 	--3color: cornflowerblue;
 	--4color: #3F3F3F;
+	--5color: #3F3F3F;
 }

@@ -15,11 +15,12 @@
 	--secondary-color: chocolate;
 	--accent-color: orangered;
 	--background-color: #3F3F3F;
+	--text-color: #3F3F3F;
 }
 body {
 	background-color: var(--background-color);
 	margin: 0;
-	color: var(--background-color);
+	color: var(--text-color);
 	font-size: 18px;
 	font-family: 'Century Gothic', AppleGothic, sans-serif;
 }
@@ -47,7 +48,7 @@ button, .button {
 }
 hr {
 	border-style: solid;
-	color: var(--background-color);
+	color: var(--text-color);
 }
 /* Navbar */
 header {
@@ -93,6 +94,7 @@ header h1 {
 /* Layout */
 #flex {
 	display: flex;
+	min-height: 200px;
 }
 aside {
 	background-color: var(--secondary-color);

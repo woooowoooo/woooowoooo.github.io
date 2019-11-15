@@ -1,4 +1,4 @@
-//Initialization
+//Variables
 const canvas = document.getElementById("game");
 var screenSize = {
 	x: 960,
@@ -45,49 +45,53 @@ function getMousePos(canvas, event) {
     mousePos.y = event.clientY - rect.top;
 }
 addEventListener("keydown", function(e) {
-	keysPressed[e.code] = true;
-}, false);
+	keysPressed[e.key] = true;
+	console.log("The \"" + e.key + "\" key was pressed.");
+});
 addEventListener("keyup", function(e) {
-	delete keysPressed[e.code];
-}, false);
+	delete keysPressed[e.key];
+	console.log("The \"" + e.key + "\" key was released.");
+});
 addEventListener("mousedown", function(e) {
 	clicked = true;
 	getMousePos(canvas, e);
-}, false);
+	console.log("The mouse was clicked on " + mousePos.x + ", " + mousePos.y + ".");
+});
 addEventListener("mouseup", function(e) {
 	clicked = false;
-}, false);
+	console.log("The mouse was released.");
+});
 //Handling input
-var handle = function() {
+function handle() {
 	
 }
 //Pausing
 var paused = false;
 var pPressed = false;
-var pause = function() {
-	if ("KeyP" in keysPressed && !pPressed) {
+function pause() {
+	if (("p" in keysPressed || "P" in keysPressed) && !pPressed) {
 		paused = !paused;
 		if (paused) {
 			ctx.beginPath();
 			ctx.rect(0, 0, screenSize.x, screenSize.y);
 			ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
 			ctx.fill();
-			ctx.font = "60px sans-serif";
+			ctx.font = "120px Century Gothic, Apple Gothic, AppleGothic, sans-serif";
 			ctx.textAlign = "center";
 			ctx.fillStyle = "rgba(255, 255, 255, 1)";
-			ctx.fillText("PAUSED", screenSize.x / 2, screenSize.y / 4);
+			ctx.fillText("PAUSED", screenSize.x / 2, screenSize.y / 2);
 			theme.media.pause();
 		} else {
 			ctx.clearRect(0, 0, screenSize.x, screenSize.y);
 			theme.media.play();
 		}
 		pPressed = true;
-	} else if (!("KeyP" in keysPressed)) {
+	} else if (!("p" in keysPressed || "P" in keysPressed)) {
 		pPressed = false;
 	}
 }
-//Rendering items
-var render = function() {
+//Start menu
+function drawStart() {
 	if (start.loaded) {
 		ctx.drawImage(start.media, 0, 0, screenSize.x, screenSize.y);
 	}
@@ -95,13 +99,23 @@ var render = function() {
 		theme.media.play();
 	}
 }
+//Rendering other items
+function render() {
+	
+}
 //Game loop
-var game = function() {
+function game() {
 	if (!paused) {
 		handle();
+		drawStart();
 		render();
 	}
 	pause();
 	requestAnimationFrame(game);
 }
-game();
+//Start menu
+function initialize() {
+	drawStart();
+	requestAnimationFrame(game);
+}
+initialize();
