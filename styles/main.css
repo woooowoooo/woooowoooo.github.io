@@ -24,10 +24,6 @@ body {
 	font-size: 18px;
 	font-family: 'Century Gothic', AppleGothic, sans-serif;
 }
-a {
-	color: var(--accent-color);
-	text-decoration: none;
-}
 button, .button {
 	display: inline-block;
 	background-color: var(--background-color);
@@ -49,6 +45,14 @@ button, .button {
 hr {
 	border-style: solid;
 	color: var(--text-color);
+}
+a {
+	color: var(--accent-color);
+	text-decoration: none;
+}
+b {
+	font-size: 1.2em;
+	font-weight: bold;
 }
 /* Navbar */
 header {
