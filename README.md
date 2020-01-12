@@ -1,2 +1,2 @@
 # woooowoooo.github.io
-The personal website of Ryan Z. Currently has a partly finished game.
+The personal website of Ryan Z. Includes a "game" that does nothing.
