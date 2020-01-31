@@ -38,9 +38,9 @@ button, .button {
 	transition-duration: .5s;
 	cursor: pointer;
 }
-.button.image {
-	background-repeat: no-repeat;
-	background-size: cover;
+.teaser{
+	width: 250px;
+	padding: 0;
 }
 hr {
 	border-style: solid;

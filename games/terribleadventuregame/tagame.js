@@ -1,37 +1,50 @@
 //Variables
-const canvas = document.getElementById("game");
+var canvas = document.getElementById("game");
 var screenSize = {
 	x: 960,
 	y: 640
 };
 canvas.width = screenSize.x;
 canvas.height = screenSize.y;
-const ctx = canvas.getContext("2d");
+var ctx = canvas.getContext("2d");
 ctx.imageSmoothingEnabled = false;
-function getMedia(thing, path, audio) {
-	thing.loaded = false;
-	if (audio) {
-		thing.media = new Audio();
-		thing.type = "audio/mpeg";
-	} else {
-		thing.media = new Image();
+var person = {
+	name: "Zoosmell Pooplord",
+	age: 15,
+	brains: 80,
+	brawn: 30,
+	beauty: 40,
+};
+//Loading assets
+var cache = {};
+function loadResources(images, sounds, callback) {
+	var successes = 0;
+	console.log("Images has length " + images.length + ".");
+	console.log("Sounds has length " + sounds.length + ".");
+	var success = function() {
+		successes ++;
+		console.log(this.src + " has loaded; total " + successes + " successes.");
+		if (successes == images.length + sounds.length) {
+			callback();
+		}
+	};
+	for (var i = 0; i < images.length; i++) {
+		var path = images[i];
+		cache[path] = document.createElement("img");
+		cache[path].addEventListener("load", success, false);
+		cache[path].src = "images/" + path + ".png";
+		console.log("Image " + path + " cached.");
 	}
-	thing.media.src = path;
-	thing.media.onload = function() {
-		thing.loaded = true;
+	for (var j = 0; j < sounds.length; j++) {
+		var path = sounds[j];
+		cache[path] = document.createElement("audio");
+		cache[path].addEventListener("canplaythrough", success, false);
+		cache[path].src = "sounds/" + path + ".mp3";
+		console.log("Sound " + path + " cached.");
 	}
 }
-var start = {};
-getMedia(start, "images/start.png", false);
-var theme = {};
-getMedia(theme, "sounds/theme.mp3", true);
-var baby = {
-	name: "Zoosmell Pooplord",
-	age: 0,
-	smarts: 0,
-	speech: 0,
-	strength: 0
-};
+var images = ["start"];
+var sounds = ["goldbergAria"];
 //Noting input
 var keysPressed = {};
 var clicked = false;
@@ -40,7 +53,7 @@ var mousePos = {
 	y: 0
 };
 function getMousePos(canvas, event) {
-    const rect = canvas.getBoundingClientRect();
+    var rect = canvas.getBoundingClientRect();
     mousePos.x = event.clientX - rect.left;
     mousePos.y = event.clientY - rect.top;
 }
@@ -68,9 +81,12 @@ function handle() {
 //Pausing
 var paused = false;
 var pPressed = false;
+var pausedAudio = {};
 function pause() {
 	if (("p" in keysPressed || "P" in keysPressed) && !pPressed) {
 		paused = !paused;
+		console.log("Pause state (paused) is now " + paused);
+		pPressed = true;
 		if (paused) {
 			ctx.beginPath();
 			ctx.rect(0, 0, screenSize.x, screenSize.y);
@@ -80,42 +96,50 @@ function pause() {
 			ctx.textAlign = "center";
 			ctx.fillStyle = "rgba(255, 255, 255, 1)";
 			ctx.fillText("PAUSED", screenSize.x / 2, screenSize.y / 2);
-			theme.media.pause();
+			for (var i = 0; i < sounds.length; i++) {
+				if (!cache[sounds[i]].paused) {
+					cache[sounds[i]].pause();
+					pausedAudio[i] = true;
+					console.log("PausedAudio[" + i + "] is now " + pausedAudio[i] + ".");
+				}
+			}
 		} else {
 			ctx.clearRect(0, 0, screenSize.x, screenSize.y);
-			theme.media.play();
+			for (var i = 0; i < sounds.length; i++) {
+				console.log("PausedAudio[" + i + "] is: " + pausedAudio[i] + ", and if true will become false.");
+				if (pausedAudio[i]) {
+					cache[sounds[i]].play();
+					pausedAudio[i] = false;
+				}
+			}
 		}
-		pPressed = true;
 	} else if (!("p" in keysPressed || "P" in keysPressed)) {
 		pPressed = false;
 	}
 }
-//Start menu
-function drawStart() {
-	if (start.loaded) {
-		ctx.drawImage(start.media, 0, 0, screenSize.x, screenSize.y);
-	}
-	if (theme.loaded) {
-		theme.media.play();
-	}
-}
 //Rendering other items
 function render() {
-	
+	ctx.drawImage(cache.start, 0, 0, screenSize.x, screenSize.y);
 }
 //Game loop
 function game() {
 	if (!paused) {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		handle();
-		drawStart();
 		render();
 	}
 	pause();
+	//To test sound and pausing sound
+	if ("t" in keysPressed) {
+		cache.goldbergAria.play();
+	}
 	requestAnimationFrame(game);
 }
 //Start menu
-function initialize() {
-	drawStart();
-	requestAnimationFrame(game);
+function startGame() {
+	console.log(cache.start);
+	console.log("0, 0 to " + screenSize.x + ", " + screenSize.y);
+	ctx.drawImage(cache.start, 0, 0, screenSize.x, screenSize.y);
+	game();
 }
-initialize();
+loadResources(images, sounds, startGame);
