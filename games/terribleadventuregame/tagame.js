@@ -38,13 +38,13 @@ function loadResources(images, sounds, callback) {
 	for (var j = 0; j < sounds.length; j++) {
 		var path = sounds[j];
 		cache[path] = document.createElement("audio");
-		cache[path].addEventListener("canplaythrough", success, false);
+		cache[path].addEventListener("canplay", success, false);
 		cache[path].src = "sounds/" + path + ".mp3";
 		console.log("Sound " + path + " cached.");
 	}
 }
 var images = ["start"];
-var sounds = ["goldbergAria"];
+var sounds = ["goldbergAria", "burp"];
 //Noting input
 var keysPressed = {};
 var clicked = false;
@@ -132,6 +132,9 @@ function game() {
 	//To test sound and pausing sound
 	if ("t" in keysPressed) {
 		cache.goldbergAria.play();
+	}
+	if ("b" in keysPressed) {
+		cache.burp.play();
 	}
 	requestAnimationFrame(game);
 }
