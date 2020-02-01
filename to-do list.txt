@@ -1,4 +1,4 @@
-To-do:
+﻿To-do:
 
 • ✓ This page
 • ✓ House selector
@@ -7,21 +7,32 @@ To-do:
 Content:
 	• ✓ More links
 	• ✓ TL;DR feature
-	•Content update
+	• ✓ Content update
+	• Move stupid posts
 Organization:
 	• ✓ Navbar migration
 	• ✓ Footer migration
 	• ✓ Meta tag migration
-	•Sitemap
+	• ✓ Sitemap
+	• Upload sitemap
+	• XML Sitemap
+	• ✓ Script combining
 Graphics:
 	• ✓ Graphics update
 	• ✓ Theme changing
 	• ✓ Theme storage
 	• ✓ Color update
 	• ✓ Font size readability
-	•Quality themes
+	• Quality themes
+	• ✓ Fifth text color variable
 Device and browser support:
 	• ✓ Mobile layout
-	•Other browser support
-Terrible baby adventure game:
+	• Other browser support
+Terrible adventure game:
 	• ✓ Basic canvas stuff
+	• ✓ Audio support
+	• ✓ Ease future image and audio loading
+	• Menu screen buttons
+	• Loading screen
+	• Make theme song
+	• Do pixel art
