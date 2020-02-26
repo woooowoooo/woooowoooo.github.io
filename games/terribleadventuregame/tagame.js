@@ -1,4 +1,4 @@
-//Variables
+//Canvas
 var canvas = document.getElementById("game");
 var screenSize = {
 	x: 960,
@@ -6,41 +6,33 @@ var screenSize = {
 };
 canvas.width = screenSize.x;
 canvas.height = screenSize.y;
-var ctx = canvas.getContext("2d");
-ctx.imageSmoothingEnabled = false;
-var person = {
-	name: "Zoosmell Pooplord",
-	age: 15,
-	brains: 80,
-	brawn: 30,
-	beauty: 40,
-};
+console.log("Dimensions are " + screenSize.x + " by " + screenSize.y + ".");
+var canvasContext = canvas.getContext("2d");
+canvasContext.imageSmoothingEnabled = false;
 //Loading assets
 var cache = {};
 function loadResources(images, sounds, callback) {
 	var successes = 0;
 	console.log("Images has length " + images.length + ".");
 	console.log("Sounds has length " + sounds.length + ".");
+	var initialize = function(type, eventType, folder, path, extension) {
+		cache[path] = document.createElement(type);
+		cache[path].addEventListener(eventType, success, false);
+		cache[path].src = folder + path + extension;
+		console.log(cache[path].tagName + " " + path + " initialized.");
+	};
 	var success = function() {
 		successes ++;
-		console.log(this.src + " has loaded; total " + successes + " successes.");
+		console.log(this.src.split("/")[this.src.split("/").length - 1] + " has loaded; total " + successes + " successes.");
 		if (successes == images.length + sounds.length) {
 			callback();
 		}
 	};
 	for (var i = 0; i < images.length; i++) {
-		var path = images[i];
-		cache[path] = document.createElement("img");
-		cache[path].addEventListener("load", success, false);
-		cache[path].src = "images/" + path + ".png";
-		console.log("Image " + path + " cached.");
+		initialize("img", "load", "images/", images[i], ".png");
 	}
 	for (var j = 0; j < sounds.length; j++) {
-		var path = sounds[j];
-		cache[path] = document.createElement("audio");
-		cache[path].addEventListener("canplay", success, false);
-		cache[path].src = "sounds/" + path + ".mp3";
-		console.log("Sound " + path + " cached.");
+		initialize("audio", "canplaythrough", "sounds/", sounds[j], ".mp3");
 	}
 }
 var images = ["start"];
@@ -48,14 +40,14 @@ var sounds = ["goldbergAria", "burp"];
 //Noting input
 var keysPressed = {};
 var clicked = false;
-var mousePos = {
+var mousePosition = {
 	x: 0,
 	y: 0
 };
-function getMousePos(canvas, event) {
+function getMousePosition(canvas, event) {
     var rect = canvas.getBoundingClientRect();
-    mousePos.x = event.clientX - rect.left;
-    mousePos.y = event.clientY - rect.top;
+    mousePosition.x = event.clientX - rect.left;
+    mousePosition.y = event.clientY - rect.top;
 }
 addEventListener("keydown", function(e) {
 	keysPressed[e.key] = true;
@@ -67,8 +59,8 @@ addEventListener("keyup", function(e) {
 });
 addEventListener("mousedown", function(e) {
 	clicked = true;
-	getMousePos(canvas, e);
-	console.log("The mouse was clicked on " + mousePos.x + ", " + mousePos.y + ".");
+	getMousePosition(canvas, e);
+	console.log("The mouse was clicked on " + mousePosition.x + ", " + mousePosition.y + ".");
 });
 addEventListener("mouseup", function(e) {
 	clicked = false;
@@ -78,6 +70,30 @@ addEventListener("mouseup", function(e) {
 function handle() {
 	
 }
+//Dunno
+var person = {
+	name: "Zoosmell Pooplord",
+	age: 15,
+	brains: 80,
+	brawn: 30,
+	beauty: 40,
+};
+//State machine
+var stateMachine = new StateMachine({
+	init: "booting",
+	transitions: [
+		{name: "ready", from: "booting", to: "menu"},
+	],
+	methods: {
+		onReady: function() {
+			console.log(cache);
+			canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+			canvasContext.drawImage(cache.start, 0, 0, screenSize.x, screenSize.y);
+			console.log("Ready!");
+			loop();
+		},
+	}
+});
 //Pausing
 var paused = false;
 var pPressed = false;
@@ -85,31 +101,31 @@ var pausedAudio = {};
 function pause() {
 	if (("p" in keysPressed || "P" in keysPressed) && !pPressed) {
 		paused = !paused;
-		console.log("Pause state (paused) is now " + paused);
+		console.log("\"paused\" is now " + paused);
 		pPressed = true;
 		if (paused) {
-			ctx.beginPath();
-			ctx.rect(0, 0, screenSize.x, screenSize.y);
-			ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
-			ctx.fill();
-			ctx.font = "120px Century Gothic, Apple Gothic, AppleGothic, sans-serif";
-			ctx.textAlign = "center";
-			ctx.fillStyle = "rgba(255, 255, 255, 1)";
-			ctx.fillText("PAUSED", screenSize.x / 2, screenSize.y / 2);
+			canvasContext.beginPath();
+			canvasContext.rect(0, 0, screenSize.x, screenSize.y);
+			canvasContext.fillStyle = "rgba(0, 0, 0, 0.5)";
+			canvasContext.fill();
+			canvasContext.font = "120px Century Gothic, Apple Gothic, AppleGothic, sans-serif";
+			canvasContext.textAlign = "center";
+			canvasContext.fillStyle = "rgba(255, 255, 255, 1)";
+			canvasContext.fillText("PAUSED", screenSize.x / 2, screenSize.y / 2);
 			for (var i = 0; i < sounds.length; i++) {
 				if (!cache[sounds[i]].paused) {
 					cache[sounds[i]].pause();
 					pausedAudio[i] = true;
-					console.log("PausedAudio[" + i + "] is now " + pausedAudio[i] + ".");
+					console.log("PausedAudio[" + i + "], " + sounds[i] + ", is now true.");
 				}
 			}
 		} else {
-			ctx.clearRect(0, 0, screenSize.x, screenSize.y);
+			canvasContext.clearRect(0, 0, screenSize.x, screenSize.y);
 			for (var i = 0; i < sounds.length; i++) {
-				console.log("PausedAudio[" + i + "] is: " + pausedAudio[i] + ", and if true will become false.");
 				if (pausedAudio[i]) {
 					cache[sounds[i]].play();
 					pausedAudio[i] = false;
+					console.log("PausedAudio[" + i + "], " + sounds[i] + ", is now false.");
 				}
 			}
 		}
@@ -119,12 +135,12 @@ function pause() {
 }
 //Rendering other items
 function render() {
-	ctx.drawImage(cache.start, 0, 0, screenSize.x, screenSize.y);
+	canvasContext.drawImage(cache.start, 0, 0, screenSize.x, screenSize.y);
 }
 //Game loop
-function game() {
+function loop() {
 	if (!paused) {
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		canvasContext.clearRect(0, 0, canvas.width, canvas.height);
 		handle();
 		render();
 	}
@@ -136,13 +152,10 @@ function game() {
 	if ("b" in keysPressed) {
 		cache.burp.play();
 	}
-	requestAnimationFrame(game);
+	requestAnimationFrame(loop);
 }
 //Start menu
 function startGame() {
-	console.log(cache.start);
-	console.log("0, 0 to " + screenSize.x + ", " + screenSize.y);
-	ctx.drawImage(cache.start, 0, 0, screenSize.x, screenSize.y);
-	game();
+	stateMachine.ready();
 }
 loadResources(images, sounds, startGame);
