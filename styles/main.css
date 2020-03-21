@@ -35,6 +35,7 @@ button, .button {
 	color: var(--accent-color);
 	font-size: 1em;
 	font-family: 'Century Gothic', AppleGothic, sans-serif;
+	font-weight: normal;
 	transition-duration: .5s;
 	cursor: pointer;
 }
@@ -48,6 +49,7 @@ hr {
 }
 a {
 	color: var(--accent-color);
+	font-weight: bold;
 	text-decoration: none;
 }
 b {
@@ -78,6 +80,7 @@ header h1 {
 	transition-duration: .5s;
 	color: var(--secondary-color);
 	text-align: center;
+	font-weight: normal;
 }
 #navbar a.right {
 	float: right;
