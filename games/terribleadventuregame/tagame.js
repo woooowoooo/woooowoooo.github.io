@@ -64,10 +64,6 @@ addEventListener("mouseup", function(e) {
 	clicked = false;
 	console.log("The mouse was released.");
 });
-//Handling input
-function handle() {
-	
-}
 //Dunno
 var person = {
 	name: "Zoosmell Pooplord",
@@ -81,6 +77,8 @@ var stateMachine = new StateMachine({
 	init: "booting",
 	transitions: [
 		{name: "ready", from: "booting", to: "menu"},
+		{name: "pause", from: "menu", to: "paused"},
+		{name: "unpause", from: "paused", to: "menu"},
 	],
 	methods: {
 		onTransition: function(lifecycle) {
@@ -92,19 +90,7 @@ var stateMachine = new StateMachine({
 			canvasContext.drawImage(cache.start, 0, 0, screenSize.x, screenSize.y);
 			loop();
 		},
-	}
-});
-//Pausing
-var paused = false;
-var pPressed = false;
-var pausedAudio = {};
-function pause() {
-	if (("p" in keysPressed || "P" in keysPressed) && !pPressed) {
-		paused = !paused;
-		console.log("\"paused\" is now " + paused);
-		pPressed = true;
-		if (paused) {
-			canvasContext.beginPath();
+		onPause: function() {
 			canvasContext.rect(0, 0, screenSize.x, screenSize.y);
 			canvasContext.fillStyle = "rgba(0, 0, 0, 0.5)";
 			canvasContext.fill();
@@ -119,7 +105,8 @@ function pause() {
 					console.log("PausedAudio[" + i + "], " + sounds[i] + ", is now true.");
 				}
 			}
-		} else {
+		},
+		onUnpause: function() {
 			canvasContext.clearRect(0, 0, screenSize.x, screenSize.y);
 			for (var i = 0; i < sounds.length; i++) {
 				if (pausedAudio[i]) {
@@ -129,7 +116,31 @@ function pause() {
 				}
 			}
 		}
-	} else if (!("p" in keysPressed || "P" in keysPressed)) {
+	}
+});
+//Game loop
+function loop() {
+	pause();
+	if (!stateMachine.is("paused")) {
+		canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+		handle();
+		render();
+	}
+	requestAnimationFrame(loop);
+}
+//Checking for pause/unpause
+var pPressed = false;
+var pausedAudio = {};
+function pause() {
+	if (("p" in keysPressed || "P" in keysPressed) && !pPressed) {
+		pPressed = true;
+		if (!stateMachine.is("paused")) {
+			stateMachine.pause();
+		} else {
+			stateMachine.unpause();
+		}
+	}
+	else if (!("p" in keysPressed || "P" in keysPressed)) {
 		pPressed = false;
 	}
 }
@@ -137,22 +148,14 @@ function pause() {
 function render() {
 	canvasContext.drawImage(cache.start, 0, 0, screenSize.x, screenSize.y);
 }
-//Game loop
-function loop() {
-	if (!paused) {
-		canvasContext.clearRect(0, 0, canvas.width, canvas.height);
-		handle();
-		render();
-	}
-	pause();
-	//To test sound and pausing sound
+//Handling input
+function handle() {
 	if ("t" in keysPressed) {
 		cache.goldbergAria.play();
 	}
 	if ("b" in keysPressed) {
 		cache.burp.play();
 	}
-	requestAnimationFrame(loop);
 }
 //Start menu
 function startGame() {
