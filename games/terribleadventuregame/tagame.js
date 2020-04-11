@@ -6,24 +6,22 @@ var screenSize = {
 };
 canvas.width = screenSize.x;
 canvas.height = screenSize.y;
-console.log("Dimensions are " + screenSize.x + " by " + screenSize.y + ".");
+console.log("Canvas dimensions are " + screenSize.x + " by " + screenSize.y + ".");
 var canvasContext = canvas.getContext("2d");
 canvasContext.imageSmoothingEnabled = false;
 //Loading assets
 var cache = {};
 function loadResources(images, sounds, callback) {
 	var successes = 0;
-	console.log("Images has length " + images.length + ".");
-	console.log("Sounds has length " + sounds.length + ".");
+	console.log("Images has length " + images.length + " and sounds has length " + sounds.length + ".");
 	var initialize = function(type, eventType, folder, path, extension) {
 		cache[path] = document.createElement(type);
 		cache[path].addEventListener(eventType, success, false);
 		cache[path].src = folder + path + extension;
-		console.log(cache[path].tagName + " " + path + " initialized.");
 	};
 	var success = function() {
 		successes ++;
-		console.log(this.src.split("/")[this.src.split("/").length - 1] + " has loaded; total " + successes + " successes.");
+		console.log(this.tagName + " " + this.src.split("/")[this.src.split("/").length - 1] + " has loaded; total " + successes + " successes.");
 		if (successes == images.length + sounds.length) {
 			callback();
 		}
@@ -85,11 +83,13 @@ var stateMachine = new StateMachine({
 		{name: "ready", from: "booting", to: "menu"},
 	],
 	methods: {
+		onTransition: function(lifecycle) {
+			console.log("----- " + lifecycle.transition);
+		},
 		onReady: function() {
 			console.log(cache);
 			canvasContext.clearRect(0, 0, canvas.width, canvas.height);
 			canvasContext.drawImage(cache.start, 0, 0, screenSize.x, screenSize.y);
-			console.log("Ready!");
 			loop();
 		},
 	}
