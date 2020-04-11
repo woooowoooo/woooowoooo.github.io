@@ -12,10 +12,10 @@
 }
 :root {
 	--primary-color: navajowhite;
-	--secondary-color: chocolate;
+	--secondary-color: #E0A458;
 	--accent-color: orangered;
-	--background-color: #3F3F3F;
-	--text-color: #3F3F3F;
+	--background-color: #3B3131;
+	--text-color: #2B1B1B;
 }
 body {
 	background-color: var(--background-color);
@@ -87,7 +87,7 @@ header h1 {
 }
 #navbar a.active, #navbar a:hover:not(.active), a:hover, button:hover {
 	background-color: var(--accent-color);
-	color: var(--background-color);
+	color: var(--text-color);
 }
 #open-icon, #close-icon {
 	display: none;

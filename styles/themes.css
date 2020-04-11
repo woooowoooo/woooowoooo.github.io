@@ -8,10 +8,10 @@ button:hover {
 }
 #default {
 	--1color: navajowhite;
-	--2color: chocolate;
+	--2color: #E0A458;
 	--3color: orangered;
-	--4color: #3F3F3F;
-	--5color: #3F3F3F;
+	--4color: #3B3631;
+	--5color: #2C231B;
 }
 #grayscale {
 	--1color: whitesmoke;
@@ -21,11 +21,11 @@ button:hover {
 	--5color: #3F3F3F;
 }
 #dark {
-	--1color: #372F2F;
-	--2color: #473F3F;
-	--3color: navajowhite;
-	--4color: chocolate;
-	--5color: linen;
+	--1color: #2C231B;
+	--2color: #3B3631;
+	--3color: orangered;
+	--4color: #E6C8A6;
+	--5color: antiquewhite;
 }
 #neutral {
 	--1color: whitesmoke;
@@ -35,35 +35,49 @@ button:hover {
 	--5color: #3F3F3F;
 }
 #aquatic {
+	--1color: paleturquoise;
+	--2color: lightseagreen;
+	--3color: yellowgreen;
+	--4color: #3B3631;
+	--5color: #2C231B;
+}
+#beach {
 	--1color: mediumaquamarine;
-	--2color: wheat;
+	--2color: blanchedalmond;
 	--3color: sandybrown;
-	--4color: #3F3F3F;
-	--5color: #3F3F3F;
+	--4color: #3B3631;
+	--5color: #2C231B;
 }
 #desert {
 	--1color: #E0A458;
 	--2color: navajowhite;
 	--3color: #C3D741;
-	--4color: sienna;
-	--5color: #733F0C;
+	--4color: saddlebrown;
+	--5color: #722D0B;
 }
 #forest {
 	--1color: olive;
-	--2color: wheat;
+	--2color: navajowhite;
 	--3color: lightcoral;
-	--4color: #66320A;
-	--5color: #301800;
+	--4color: #4D2608;
+	--5color: #2C231B;
+}
+#pastel {
+	--1color: powderblue;
+	--2color: lightsalmon;
+	--3color: lemonchiffon;
+	--4color: #3F3F3F;
+	--5color: #3F3F3F;
 }
 #sunrise {
-	--1color: #F3B88D;
-	--2color: indianred;
-	--3color: #FCECCB;
-	--4color: #582F44;
-	--5color: #582F44;
+	--1color: peachpuff;
+	--2color: lightcoral;
+	--3color: lightyellow;
+	--4color: #4C1E36;
+	--5color: #4C1E36;
 }
 #tundra {
-	--1color: #D4D9DF;
+	--1color: lightgray;
 	--2color: #C3D741;
 	--3color: olivedrab;
 	--4color: #505160;
@@ -71,22 +85,29 @@ button:hover {
 }
 #red {
 	--1color: lightsalmon;
-	--2color: #DC1E09;
+	--2color: #E64D2E;
 	--3color: red;
-	--4color: #331111;
-	--5color: #3F3F3F;
+	--4color: #221111;
+	--5color: #110000;
+}
+#yellow {
+	--1color: lightyellow;
+	--2color: khaki;
+	--3color: gold;
+	--4color: #222211;
+	--5color: #111100;
 }
 #green {
-	--1color: #CCE592;
+	--1color: #E7F9AE;
 	--2color: yellowgreen;
 	--3color: lawngreen;
-	--4color: #113311;
-	--5color: #3F3F3F;
+	--4color: #112211;
+	--5color: #001100;
 }
 #blue {
 	--1color: powderblue;
 	--2color: steelblue;
 	--3color: cornflowerblue;
-	--4color: #111133;
-	--5color: #3F3F3F;
+	--4color: #111122;
+	--5color: #000011;
 }
