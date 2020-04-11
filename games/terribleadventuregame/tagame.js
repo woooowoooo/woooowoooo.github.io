@@ -11,7 +11,7 @@ var canvasContext = canvas.getContext("2d");
 canvasContext.imageSmoothingEnabled = false;
 //Loading assets
 var cache = {};
-function loadResources(images, sounds, callback) {
+function loadResources(images, sounds) {
 	var successes = 0;
 	console.log("Images has length " + images.length + " and sounds has length " + sounds.length + ".");
 	var initialize = function(type, eventType, folder, path, extension) {
@@ -23,7 +23,7 @@ function loadResources(images, sounds, callback) {
 		successes ++;
 		console.log(this.tagName + " " + this.src.split("/")[this.src.split("/").length - 1] + " has loaded; total " + successes + " successes.");
 		if (successes == images.length + sounds.length) {
-			callback();
+			stateMachine.ready();
 		}
 	};
 	for (var i = 0; i < images.length; i++) {
@@ -84,6 +84,15 @@ var stateMachine = new StateMachine({
 		onTransition: function(lifecycle) {
 			console.log("----- " + lifecycle.transition);
 		},
+		onBooting: function() {
+			canvasContext.rect(0, 0, screenSize.x, screenSize.y);
+			canvasContext.fillStyle = "rgb(0, 0, 0)";
+			canvasContext.fill();
+			canvasContext.font = "120px Century Gothic, Apple Gothic, AppleGothic, sans-serif";
+			canvasContext.textAlign = "center";
+			canvasContext.fillStyle = "rgb(255, 255, 255)";
+			canvasContext.fillText("LOADING", screenSize.x / 2, screenSize.y / 2);
+		},
 		onReady: function() {
 			console.log(cache);
 			canvasContext.clearRect(0, 0, canvas.width, canvas.height);
@@ -96,7 +105,7 @@ var stateMachine = new StateMachine({
 			canvasContext.fill();
 			canvasContext.font = "120px Century Gothic, Apple Gothic, AppleGothic, sans-serif";
 			canvasContext.textAlign = "center";
-			canvasContext.fillStyle = "rgba(255, 255, 255, 1)";
+			canvasContext.fillStyle = "rgb(255, 255, 255)";
 			canvasContext.fillText("PAUSED", screenSize.x / 2, screenSize.y / 2);
 			for (var i = 0; i < sounds.length; i++) {
 				if (!cache[sounds[i]].paused) {
@@ -144,10 +153,6 @@ function pause() {
 		pPressed = false;
 	}
 }
-//Rendering other items
-function render() {
-	canvasContext.drawImage(cache.start, 0, 0, screenSize.x, screenSize.y);
-}
 //Handling input
 function handle() {
 	if ("t" in keysPressed) {
@@ -157,8 +162,9 @@ function handle() {
 		cache.burp.play();
 	}
 }
-//Start menu
-function startGame() {
-	stateMachine.ready();
+//Rendering other items
+function render() {
+	canvasContext.drawImage(cache.start, 0, 0, screenSize.x, screenSize.y);
 }
-loadResources(images, sounds, startGame);
+//Start menu
+loadResources(images, sounds);
