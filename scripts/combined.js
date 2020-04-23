@@ -7,6 +7,26 @@ var pathArray = location.href.split("/");
 var find = "woooowoooo.github.io";
 var childAmount = pathArray.length - pathArray.indexOf(find) - 2;
 var parentPath = "../";
+//Color storage
+var theRoot = document.documentElement.style;
+theRoot.setProperty("--primary-color", localStorage.getItem("primaryColor"));
+theRoot.setProperty("--secondary-color", localStorage.getItem("secondaryColor"));
+theRoot.setProperty("--accent-color", localStorage.getItem("accentColor"));
+theRoot.setProperty("--background-color", localStorage.getItem("backgroundColor"));
+theRoot.setProperty("--text-color", localStorage.getItem("textColor"));
+//Meta
+var head = document.getElementsByTagName("head")[0];
+function createMeta(name, content) {
+	var meta = document.createElement("meta");
+	meta.name = name;
+	meta.content = content;
+	head.appendChild(meta);
+}
+createMeta("author", "Ryan Zhang");
+createMeta("viewport", "width=device-width, initial-scale=1.0");
+var title = document.createElement("title");
+createText.call(title, "The webpage of Ryan Zhang");
+head.appendChild(title);
 //Navbar
 var navbar = document.getElementById("navbar");
 var linkArray = ["index.html","sitemap.html","about.html","contact.html","donate.html","selector.html","themes.html"];
@@ -73,24 +93,7 @@ function createFig() {
 	footer.appendChild(fig);
 }
 footer.innerHTML = "";
-createText.call(footer, "Made by Ryan Z.");
+createText.call(footer, "Made by Ryan Zhang");
 createFig();
 createText.call(footer, "This work is licensed under a ");
 createLicense();
-//Meta
-var head = document.getElementsByTagName("head")[0];
-function createMeta(name, content) {
-	var meta = document.createElement("meta");
-	meta.name = name;
-	meta.content = content;
-	head.appendChild(meta);
-}
-createMeta("author", "Ryan Z.");
-createMeta("viewport", "width=device-width, initial-scale=1.0");
-//Color storage
-var theRoot = document.documentElement.style;
-theRoot.setProperty("--primary-color", localStorage.getItem("primaryColor"));
-theRoot.setProperty("--secondary-color", localStorage.getItem("secondaryColor"));
-theRoot.setProperty("--accent-color", localStorage.getItem("accentColor"));
-theRoot.setProperty("--background-color", localStorage.getItem("backgroundColor"));
-theRoot.setProperty("--text-color", localStorage.getItem("textColor"));
