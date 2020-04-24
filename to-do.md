@@ -3,11 +3,13 @@
 - [x] House selector
 - [x] Navbar
 - [x] End SS project
+
 Content:
 - [x] More links
 - [x] TL;DR feature
 - [x] Content update
 - [X] Move stupid posts
+
 Organization:
 - [x] Navbar migration
 - [x] Footer migration
@@ -16,6 +18,7 @@ Organization:
 - [X] Upload sitemap
 - [X] XML Sitemap
 - [x] Script combining
+
 Graphics:
 - [x] Graphics update
 - [x] Theme changing
@@ -24,9 +27,11 @@ Graphics:
 - [x] Font size readability
 - [ ] Quality themes
 - [x] Fifth text color variable
+
 Device and browser support:
 - [x] Mobile layout
 - [ ] Other browser support
+
 Terrible adventure game:
 - [x] Basic canvas stuff
 - [x] Audio support
