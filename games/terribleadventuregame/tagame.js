@@ -1,49 +1,49 @@
 //Canvas
-var canvas = document.getElementById("game");
-var screenSize = {
+let canvas = document.getElementById("game");
+let screenSize = {
 	x: 960,
 	y: 640
 };
 canvas.width = screenSize.x;
 canvas.height = screenSize.y;
 console.log("Canvas dimensions are " + screenSize.x + " by " + screenSize.y + ".");
-var canvasContext = canvas.getContext("2d");
+let canvasContext = canvas.getContext("2d");
 canvasContext.imageSmoothingEnabled = false;
 //Loading assets
-var cache = {};
+let cache = {};
 function loadResources(images, sounds) {
-	var successes = 0;
+	let successes = 0;
 	console.log("Images has length " + images.length + " and sounds has length " + sounds.length + ".");
-	var initialize = function(type, eventType, folder, path, extension) {
+	let initialize = function(type, eventType, folder, path, extension) {
 		cache[path] = document.createElement(type);
 		cache[path].addEventListener(eventType, success, false);
 		cache[path].src = folder + path + extension;
 	};
-	var success = function() {
+	let success = function() {
 		successes ++;
 		console.log(this.tagName + " " + this.src.split("/")[this.src.split("/").length - 1] + " has loaded; total " + successes + " successes.");
 		if (successes == images.length + sounds.length) {
 			stateMachine.ready();
 		}
 	};
-	for (var i = 0; i < images.length; i++) {
+	for (let i = 0; i < images.length; i++) {
 		initialize("img", "load", "images/", images[i], ".png");
 	}
-	for (var j = 0; j < sounds.length; j++) {
+	for (let j = 0; j < sounds.length; j++) {
 		initialize("audio", "canplaythrough", "sounds/", sounds[j], ".mp3");
 	}
 }
-var images = ["start"];
-var sounds = ["goldbergAria", "burp"];
+const images = ["start"];
+const sounds = ["goldbergAria", "burp"];
 //Noting input
-var keysPressed = {};
-var clicked = false;
-var mousePosition = {
+let keysPressed = {};
+let clicked = false;
+let mousePosition = {
 	x: 0,
 	y: 0
 };
 function getMousePosition(canvas, event) {
-    var rect = canvas.getBoundingClientRect();
+    let rect = canvas.getBoundingClientRect();
     mousePosition.x = event.clientX - rect.left;
     mousePosition.y = event.clientY - rect.top;
 }
@@ -65,7 +65,7 @@ addEventListener("mouseup", function(e) {
 	console.log("The mouse was released.");
 });
 //Dunno
-var person = {
+let person = {
 	name: "Zoosmell Pooplord",
 	age: 15,
 	brains: 80,
@@ -73,7 +73,7 @@ var person = {
 	beauty: 40,
 };
 //State machine
-var stateMachine = new StateMachine({
+let stateMachine = new StateMachine({
 	init: "booting",
 	transitions: [
 		{name: "ready", from: "booting", to: "menu"},
@@ -107,7 +107,7 @@ var stateMachine = new StateMachine({
 			canvasContext.textAlign = "center";
 			canvasContext.fillStyle = "rgb(255, 255, 255)";
 			canvasContext.fillText("PAUSED", screenSize.x / 2, screenSize.y / 2);
-			for (var i = 0; i < sounds.length; i++) {
+			for (let i = 0; i < sounds.length; i++) {
 				if (!cache[sounds[i]].paused) {
 					cache[sounds[i]].pause();
 					pausedAudio[i] = true;
@@ -117,7 +117,7 @@ var stateMachine = new StateMachine({
 		},
 		onUnpause: function() {
 			canvasContext.clearRect(0, 0, screenSize.x, screenSize.y);
-			for (var i = 0; i < sounds.length; i++) {
+			for (let i = 0; i < sounds.length; i++) {
 				if (pausedAudio[i]) {
 					cache[sounds[i]].play();
 					pausedAudio[i] = false;
@@ -138,8 +138,8 @@ function loop() {
 	requestAnimationFrame(loop);
 }
 //Checking for pause/unpause
-var pPressed = false;
-var pausedAudio = {};
+let pPressed = false;
+let pausedAudio = {};
 function pause() {
 	if (("p" in keysPressed || "P" in keysPressed) && !pPressed) {
 		pPressed = true;

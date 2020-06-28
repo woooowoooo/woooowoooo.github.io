@@ -1,15 +1,15 @@
-var theRoot = document.documentElement.style;
-var buttons = document.getElementsByTagName("button");
-for (var i = 0; i < buttons.length; i++) {
+//theRoot is from combined.js
+let buttons = document.getElementsByTagName("button");
+for (let i = 0; i < buttons.length; i++) {
 	buttons[i].addEventListener("click", changeTheme);
 };
 function changeTheme() {
-	var style = window.getComputedStyle(event.target);
-	var color1 = style.getPropertyValue("--1color");
-	var color2 = style.getPropertyValue("--2color");
-	var color3 = style.getPropertyValue("--3color");
-	var color4 = style.getPropertyValue("--4color");
-	var color5 = style.getPropertyValue("--5color");
+	let style = window.getComputedStyle(event.target);
+	let color1 = style.getPropertyValue("--1color");
+	let color2 = style.getPropertyValue("--2color");
+	let color3 = style.getPropertyValue("--3color");
+	let color4 = style.getPropertyValue("--4color");
+	let color5 = style.getPropertyValue("--5color");
 	theRoot.setProperty("--primary-color", color1);
 	theRoot.setProperty("--secondary-color", color2);
 	theRoot.setProperty("--accent-color", color3);
