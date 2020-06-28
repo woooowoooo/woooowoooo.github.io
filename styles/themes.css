@@ -24,7 +24,7 @@ button:hover {
 	--1color: #2C231B;
 	--2color: #3B3631;
 	--3color: orangered;
-	--4color: #E6C8A6;
+	--4color: blanchedalmond;
 	--5color: antiquewhite;
 }
 #neutral {
@@ -78,9 +78,9 @@ button:hover {
 }
 #tundra {
 	--1color: lightgray;
-	--2color: #C3D741;
+	--2color: #D2E963;
 	--3color: olivedrab;
-	--4color: #505160;
+	--4color: #454654;
 	--5color: #3F3F3F;
 }
 #red {
@@ -88,26 +88,26 @@ button:hover {
 	--2color: #E64D2E;
 	--3color: red;
 	--4color: #221111;
-	--5color: #110000;
+	--5color: black;
 }
 #yellow {
 	--1color: lightyellow;
 	--2color: khaki;
 	--3color: gold;
 	--4color: #222211;
-	--5color: #111100;
+	--5color: black;
 }
 #green {
 	--1color: #E7F9AE;
 	--2color: yellowgreen;
 	--3color: lawngreen;
 	--4color: #112211;
-	--5color: #001100;
+	--5color: black;
 }
 #blue {
 	--1color: powderblue;
 	--2color: steelblue;
 	--3color: cornflowerblue;
 	--4color: #111122;
-	--5color: #000011;
+	--5color: black;
 }

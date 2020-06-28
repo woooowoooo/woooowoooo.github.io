@@ -21,7 +21,7 @@ function changeTheme() {
 	localStorage.setItem("backgroundColor", color4);
 	localStorage.setItem("textColor", color5);
 };
-document.getElementById("clear").addEventListener("click", clearStorage());
+document.getElementById("clear").addEventListener("click", clearStorage);
 function clearStorage() {
 	localStorage.clear();
 };
