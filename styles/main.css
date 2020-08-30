@@ -99,7 +99,7 @@ header h1 {
 	cursor: pointer;
 }
 /* Layout */
-#flex {
+#maindiv {
 	display: flex;
 	min-height: 300px;
 }
