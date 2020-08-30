@@ -1,27 +1,21 @@
 //theRoot is from combined.js
 let buttons = document.getElementsByTagName("button");
 for (let i = 0; i < buttons.length; i++) {
-	buttons[i].addEventListener("click", changeTheme);
+	buttons[i].addEventListener("click", changeThemes);
 };
-function changeTheme() {
+function changeThemes() {
+	changeTheme("--1color", "--primary-color", "primaryColor");
+	changeTheme("--2color", "--secondary-color", "secondaryColor");
+	changeTheme("--3color", "--accent-color", "accentColor");
+	changeTheme("--4color", "--background-color", "backgroundColor");
+	changeTheme("--5color", "--text-color", "textColor");
+}
+function changeTheme(themeColor, cssColor, storageColor) {
 	let style = window.getComputedStyle(event.target);
-	let color1 = style.getPropertyValue("--1color");
-	let color2 = style.getPropertyValue("--2color");
-	let color3 = style.getPropertyValue("--3color");
-	let color4 = style.getPropertyValue("--4color");
-	let color5 = style.getPropertyValue("--5color");
-	theRoot.setProperty("--primary-color", color1);
-	theRoot.setProperty("--secondary-color", color2);
-	theRoot.setProperty("--accent-color", color3);
-	theRoot.setProperty("--background-color", color4);
-	theRoot.setProperty("--text-color", color5);
-	localStorage.setItem("primaryColor", color1);
-	localStorage.setItem("secondaryColor", color2);
-	localStorage.setItem("accentColor", color3);
-	localStorage.setItem("backgroundColor", color4);
-	localStorage.setItem("textColor", color5);
+	let color = style.getPropertyValue(themeColor);
+	theRoot.setProperty(cssColor, color);
+	localStorage.setItem(storageColor, color);
 };
-document.getElementById("clear").addEventListener("click", clearStorage);
-function clearStorage() {
+document.getElementById("clear").addEventListener("click", function () {
 	localStorage.clear();
-};
+});
