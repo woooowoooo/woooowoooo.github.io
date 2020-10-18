@@ -11,11 +11,11 @@
 	box-sizing: border-box;
 }
 :root {
-	--primary-color: navajowhite;
+	--primary-color: blanchedalmond;
 	--secondary-color: #E0A458;
 	--accent-color: orangered;
-	--background-color: #3B3131;
-	--text-color: #2B1B1B;
+	--background-color: #3B3631;
+	--text-color: #2C231B;
 }
 body {
 	background-color: var(--background-color);
@@ -56,8 +56,9 @@ b {
 	font-size: 1.2em;
 	font-weight: bold;
 }
-/* Navbar */
+/* Header and navbar */
 header {
+	display: flex;
 	background-color: var(--primary-color);
 	padding: 20px;
 	line-height: 1.25;
@@ -73,13 +74,14 @@ header h1 {
 	color: var(--accent-color);
 	list-style-type: none;
 }
-#navbar a{
+#navbar li {
 	display: inline;
+}
+#navbar a {
 	float: left;
 	padding: 15px;
 	transition-duration: .5s;
 	color: var(--secondary-color);
-	text-align: center;
 	font-weight: normal;
 }
 #navbar a.right {
@@ -87,7 +89,7 @@ header h1 {
 }
 #navbar a.active, #navbar a:hover:not(.active), a:hover, button:hover {
 	background-color: var(--accent-color);
-	color: var(--text-color);
+	color: var(--background-color);
 }
 #open-icon, #close-icon {
 	display: none;
@@ -123,7 +125,6 @@ footer {
 /* Responsive design */
 @media (max-width: 1080px) {
 	header {
-		display: flex;
 		background-color: var(--background-color);
 		color: var(--secondary-color);
 	}
@@ -144,14 +145,16 @@ footer {
 		width: 67%;
 	}
 }
-@media (max-width: 625px) {
+@media (max-width: 640px) {
 	body {
 		font-size: 15px;
 	}
-	#flex, aside, main {
-		display: block;
+	#maindiv {
+		flex-direction: column;
+	}
+	aside, main {
 		width: 100%;
-		min-height: 100px;
+		min-height: 150px;
 	}
 	#navbar a {
 		width: 50%;
@@ -161,5 +164,16 @@ footer {
 	}
 	#navbar {
 		padding: 0;
+	}
+}
+@media (max-width: 320px) {
+	header {
+		flex-direction: column;
+	}
+	#open-icon, #close-icon {
+		width: 100%;
+	}
+	#navbar a {
+		width: 100%;
 	}
 }

@@ -7,7 +7,7 @@ button:hover {
 	color: var(--4color);
 }
 #default {
-	--1color: navajowhite;
+	--1color: blanchedalmond;
 	--2color: #E0A458;
 	--3color: orangered;
 	--4color: #3B3631;
@@ -24,7 +24,7 @@ button:hover {
 	--1color: #2C231B;
 	--2color: #3B3631;
 	--3color: orangered;
-	--4color: blanchedalmond;
+	--4color: navajowhite;
 	--5color: antiquewhite;
 }
 #neutral {
@@ -33,6 +33,20 @@ button:hover {
 	--3color: red;
 	--4color: #3F3F3F;
 	--5color: #3F3F3F;
+}
+#sollight {
+	--1color: #FDF6E3;
+	--2color: #EEE8D5;
+	--3color: #DC322F;
+	--4color: #073642;
+	--5color: #586E75;
+}
+#soldark {
+	--1color: #002B36;
+	--2color: #073642;
+	--3color: #DC322F;
+	--4color: #EEE8D5;
+	--5color: #93A1A1;
 }
 #aquatic {
 	--1color: paleturquoise;
@@ -47,13 +61,6 @@ button:hover {
 	--3color: sandybrown;
 	--4color: #3B3631;
 	--5color: #2C231B;
-}
-#desert {
-	--1color: #E0A458;
-	--2color: navajowhite;
-	--3color: #C3D741;
-	--4color: saddlebrown;
-	--5color: #722D0B;
 }
 #forest {
 	--1color: olive;
@@ -77,11 +84,11 @@ button:hover {
 	--5color: #4C1E36;
 }
 #tundra {
-	--1color: lightgray;
+	--1color: #D2E963;
 	--2color: #D2E963;
 	--3color: olivedrab;
-	--4color: #454654;
-	--5color: #3F3F3F;
+	--4color: #586E75;
+	--5color: #454654;
 }
 #red {
 	--1color: lightsalmon;
