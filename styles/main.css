@@ -95,10 +95,15 @@ header h1 {
 	display: none;
 	flex: none;
 	width: 100px;
-	padding: calc(1.43em / 6);
 	margin: 0;
 	font-size: 3em;
 	cursor: pointer;
+}
+#open-icon {
+	padding-top: calc(1.43em/3);
+}
+#close-icon {
+	padding-bottom: calc(1.43em/3);
 }
 /* Layout */
 #maindiv {
@@ -129,7 +134,7 @@ footer {
 		color: var(--secondary-color);
 	}
 	#open-icon.shown, #close-icon.shown {
-		display: inline;
+		display: initial;
 	}
 	#navbar {
 		padding: 0;
@@ -149,6 +154,9 @@ footer {
 	body {
 		font-size: 15px;
 	}
+	header {
+		padding: 0;
+	}
 	#maindiv {
 		flex-direction: column;
 	}
@@ -167,11 +175,15 @@ footer {
 	}
 }
 @media (max-width: 320px) {
+	body {
+		font-size: 12px;
+	}
 	header {
 		flex-direction: column;
 	}
 	#open-icon, #close-icon {
 		width: 100%;
+		margin-top: calc(-1.43em/2);
 	}
 	#navbar a {
 		width: 100%;

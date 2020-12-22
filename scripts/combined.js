@@ -1,8 +1,8 @@
-//General things
+// General things
 function createText(text) {
 	this.appendChild(document.createTextNode(text));
 }
-//For pages up the directories
+// For pages up the directories
 const pathArray = location.href.split("/");
 const find = "woooowoooo.github.io";
 const childAmount = pathArray.length - pathArray.indexOf(find) - 2;
@@ -27,9 +27,9 @@ function createMeta(name, content) {
 createMeta("author", "Ryan Zhang");
 createMeta("viewport", "width=device-width, initial-scale=1.0");
 let title = document.createElement("title");
-createText.call(title, "The webpage of Ryan Zhang");
+createText.call(title, "woooowoooo's website");
 head.appendChild(title);
-//Navbar
+// Navbar
 let navbar = document.getElementById("navbar");
 const linkArray = ["index.html","sitemap.html","about.html","contact.html","donate.html","selector.html","themes.html"];
 const titleArray = ["Home","Sitemap","About","Contact","Donate","My Games","Themes"];
@@ -52,28 +52,30 @@ navbar.textContent = "";
 linkArray.forEach(createLink);
 let themes = navbar.lastChild.lastChild;
 themes.classList.add("right");
-//Responsive navbar
+// Responsive navbar
 let header = document.getElementsByTagName("header")[0];
+// Open icon
 let openIcon = document.createElement("h1");
 openIcon.id = "open-icon";
 openIcon.classList.add("shown");
-createText.call(openIcon, "》");
-let closeIcon = document.createElement("h1");
-closeIcon.id = "close-icon";
-createText.call(closeIcon, "《");
+createText.call(openIcon, "︾");
 header.appendChild(openIcon);
-header.appendChild(closeIcon);
-openIcon.addEventListener("click", function() {
+openIcon.addEventListener("click", function () {
 	navbar.classList.add("shown");
 	closeIcon.classList.add("shown");
 	openIcon.classList.remove("shown");
 }, false);
-closeIcon.addEventListener("click", function() {
+// Close icon
+let closeIcon = document.createElement("h1");
+closeIcon.id = "close-icon";
+createText.call(closeIcon, "︽");
+header.appendChild(closeIcon);
+closeIcon.addEventListener("click", function () {
 	navbar.classList.remove("shown");
 	closeIcon.classList.remove("shown");
 	openIcon.classList.add("shown");
 }, false);
-//Footer
+// Footer
 let footer = document.getElementsByTagName("footer")[0];
 function createLicense() {
 	let license = document.createElement("a");
