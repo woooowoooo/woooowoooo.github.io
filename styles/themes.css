@@ -1,120 +1,120 @@
 button {
-	background-color: var(--1color);
+	background-color: var(--2color);
 	color: var(--5color);
 }
 button:hover {
-	background-color: var(--2color);
+	background-color: var(--3color);
 	color: var(--4color);
 }
 #default {
-	--1color: blanchedalmond;
-	--2color: #E0A458;
-	--3color: orangered;
-	--4color: #3B3631;
+	--1color: #3B3631;
+	--2color: blanchedalmond;
+	--3color: #E0A458;
+	--4color: orangered;
 	--5color: #2C231B;
 }
 #grayscale {
-	--1color: whitesmoke;
-	--2color: lightgray;
-	--3color: gray;
-	--4color: #3F3F3F;
+	--1color: #3F3F3F;
+	--2color: whitesmoke;
+	--3color: lightgray;
+	--4color: gray;
 	--5color: #3F3F3F;
 }
 #dark {
-	--1color: #2C231B;
-	--2color: #3B3631;
-	--3color: orangered;
-	--4color: navajowhite;
-	--5color: antiquewhite;
+	--1color: #9A7E6C;
+	--2color: #2C231B;
+	--3color: #3B3631;
+	--4color: seashell;
+	--5color: seashell;
 }
 #neutral {
-	--1color: whitesmoke;
-	--2color: skyblue;
-	--3color: red;
-	--4color: #3F3F3F;
-	--5color: #3F3F3F;
+	--1color: #3F3F3F;
+	--2color: whitesmoke;
+	--3color: skyblue;
+	--4color: red;
+	--5color: black;
 }
 #sollight {
-	--1color: #FDF6E3;
-	--2color: #EEE8D5;
-	--3color: #DC322F;
-	--4color: #073642;
+	--1color: #073642;
+	--2color: #FDF6E3;
+	--3color: #EEE8D5;
+	--4color: #DC322F;
 	--5color: #586E75;
 }
 #soldark {
-	--1color: #002B36;
-	--2color: #073642;
-	--3color: #DC322F;
-	--4color: #EEE8D5;
+	--1color: #EEE8D5;
+	--2color: #002B36;
+	--3color: #073642;
+	--4color: #DC322F;
 	--5color: #93A1A1;
 }
 #aquatic {
-	--1color: paleturquoise;
-	--2color: lightseagreen;
-	--3color: yellowgreen;
-	--4color: #3B3631;
+	--1color: #3B3631;
+	--2color: paleturquoise;
+	--3color: lightseagreen;
+	--4color: yellowgreen;
 	--5color: #2C231B;
 }
 #beach {
-	--1color: mediumaquamarine;
-	--2color: blanchedalmond;
-	--3color: sandybrown;
-	--4color: #3B3631;
+	--1color: #3B3631;
+	--2color: mediumaquamarine;
+	--3color: blanchedalmond;
+	--4color: sandybrown;
 	--5color: #2C231B;
 }
 #forest {
-	--1color: olive;
-	--2color: navajowhite;
-	--3color: lightcoral;
-	--4color: #4D2608;
+	--1color: #4D2608;
+	--2color: olive;
+	--3color: navajowhite;
+	--4color: lightcoral;
 	--5color: #2C231B;
 }
 #pastel {
-	--1color: powderblue;
-	--2color: lightsalmon;
-	--3color: lemonchiffon;
-	--4color: #3F3F3F;
+	--1color: #3F3F3F;
+	--2color: powderblue;
+	--3color: lightsalmon;
+	--4color: lemonchiffon;
 	--5color: #3F3F3F;
 }
 #sunrise {
-	--1color: peachpuff;
-	--2color: lightcoral;
-	--3color: lightyellow;
-	--4color: #4C1E36;
+	--1color: #4C1E36;
+	--2color: peachpuff;
+	--3color: lightcoral;
+	--4color: lightyellow;
 	--5color: #4C1E36;
 }
 #tundra {
-	--1color: #D2E963;
-	--2color: #D2E963;
-	--3color: olivedrab;
-	--4color: #586E75;
-	--5color: #454654;
+	--1color: #3F3F3F;
+	--2color: #DBE3E6;
+	--3color: #D9E65C;
+	--4color: #6FA600;
+	--5color: black;
 }
 #red {
-	--1color: lightsalmon;
-	--2color: #E64D2E;
-	--3color: red;
-	--4color: #221111;
+	--1color: #222211;
+	--2color: #FFECE1;
+	--3color: #FBA797;
+	--4color: #37A600;
 	--5color: black;
 }
 #yellow {
-	--1color: lightyellow;
-	--2color: khaki;
-	--3color: gold;
-	--4color: #222211;
+	--1color: #222211;
+	--2color: lightyellow;
+	--3color: khaki;
+	--4color: #E60000;
 	--5color: black;
 }
 #green {
-	--1color: #E7F9AE;
-	--2color: yellowgreen;
-	--3color: lawngreen;
-	--4color: #112211;
+	--1color: #222211;
+	--2color: #F7FFCD;
+	--3color: #C6F349;
+	--4color: #E60000;
 	--5color: black;
 }
 #blue {
-	--1color: powderblue;
-	--2color: steelblue;
-	--3color: cornflowerblue;
-	--4color: #111122;
+	--1color: #222222;
+	--2color: lightcyan;
+	--3color: lightskyblue;
+	--4color: #CD5200;
 	--5color: black;
 }

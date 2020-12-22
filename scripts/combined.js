@@ -7,14 +7,16 @@ const pathArray = location.href.split("/");
 const find = "woooowoooo.github.io";
 const childAmount = pathArray.length - pathArray.indexOf(find) - 2;
 const parentPath = "../";
-//Color storage
-let theRoot = document.documentElement.style;
-theRoot.setProperty("--primary-color", localStorage.getItem("primaryColor"));
-theRoot.setProperty("--secondary-color", localStorage.getItem("secondaryColor"));
-theRoot.setProperty("--accent-color", localStorage.getItem("accentColor"));
-theRoot.setProperty("--background-color", localStorage.getItem("backgroundColor"));
-theRoot.setProperty("--text-color", localStorage.getItem("textColor"));
-//Meta
+// Color storage
+const names = ["background", "primary", "secondary", "accent", "text"];
+function setColor(name) {
+	let theRoot = document.documentElement.style;
+	theRoot.setProperty("--" + name + "-color", localStorage.getItem(name + "Color"));
+}
+for (i = 0; i < names.length; i++) {
+	setColor(names[i]);
+}
+// Meta
 let head = document.getElementsByTagName("head")[0];
 function createMeta(name, content) {
 	let meta = document.createElement("meta");

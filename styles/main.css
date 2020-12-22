@@ -11,10 +11,10 @@
 	box-sizing: border-box;
 }
 :root {
+	--background-color: #3B3631;
 	--primary-color: blanchedalmond;
 	--secondary-color: #E0A458;
 	--accent-color: orangered;
-	--background-color: #3B3631;
 	--text-color: #2C231B;
 }
 body {
