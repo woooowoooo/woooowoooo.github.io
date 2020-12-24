@@ -16,13 +16,14 @@
 	--secondary-color: #E0A458;
 	--accent-color: orangered;
 	--text-color: #2C231B;
+	--font-stack: 'Century Gothic', AppleGothic, sans-serif;
 }
 body {
 	background-color: var(--background-color);
 	margin: 0;
 	color: var(--text-color);
 	font-size: 18px;
-	font-family: 'Century Gothic', AppleGothic, sans-serif;
+	font-family: var(--font-stack);
 }
 button, .button {
 	display: inline-block;
@@ -34,7 +35,7 @@ button, .button {
 	text-align: center;
 	color: var(--accent-color);
 	font-size: 1em;
-	font-family: 'Century Gothic', AppleGothic, sans-serif;
+	font-family: var(--font-stack);
 	font-weight: normal;
 	transition-duration: .5s;
 	cursor: pointer;
@@ -75,17 +76,17 @@ header h1 {
 	list-style-type: none;
 }
 #navbar li {
-	display: inline;
+	float: left;
+}
+#navbar li.right {
+	float: right;
 }
 #navbar a {
-	float: left;
+	display: block;
 	padding: 15px;
 	transition-duration: .5s;
 	color: var(--secondary-color);
 	font-weight: normal;
-}
-#navbar a.right {
-	float: right;
 }
 #navbar a.active, #navbar a:hover:not(.active), a:hover, button:hover {
 	background-color: var(--accent-color);
@@ -99,11 +100,14 @@ header h1 {
 	font-size: 3em;
 	cursor: pointer;
 }
+#open-icon:hover, #close-icon:hover {
+	color: var(--accent-color);
+}
 #open-icon {
-	padding-top: calc(1.43em/3);
+	padding-top: calc(0.67em * 2 / 3);
 }
 #close-icon {
-	padding-bottom: calc(1.43em/3);
+	padding-bottom: calc(0.67em * 2 / 3);
 }
 /* Layout */
 #maindiv {
@@ -133,14 +137,20 @@ footer {
 		background-color: var(--background-color);
 		color: var(--secondary-color);
 	}
-	#open-icon.shown, #close-icon.shown {
+	header h1 {
+		margin: 0.67em;
+	}
+	#open-icon, #close-icon {
+		margin-left: calc(-0.67em * 2 / 3);
+	}
+	#open-icon:not(.hidden), #close-icon:not(.hidden) {
 		display: initial;
 	}
 	#navbar {
 		padding: 0;
 		font-size: 15px;
 	}
-	#navbar:not(.shown) {
+	#navbar.hidden {
 		display: none;
 	}
 	aside {
@@ -164,14 +174,18 @@ footer {
 		width: 100%;
 		min-height: 150px;
 	}
-	#navbar a {
-		width: 50%;
+	#navbar {
+		display: flex;
+		flex-flow: row wrap;
 	}
-	#navbar a.right {
+	#navbar a {
 		width: 100%;
 	}
-	#navbar {
-		padding: 0;
+	#navbar li {
+		flex: 160px;
+	}
+	#navbar li.right {
+		flex-grow: auto;
 	}
 }
 @media (max-width: 320px) {
@@ -181,11 +195,12 @@ footer {
 	header {
 		flex-direction: column;
 	}
+	header h1 {
+		margin: calc(0.67em / 2);
+	}
 	#open-icon, #close-icon {
 		width: 100%;
-		margin-top: calc(-1.43em/2);
-	}
-	#navbar a {
-		width: 100%;
+		margin-top: calc(-0.67em * 5 / 6);
+		margin-left: 0;
 	}
 }

@@ -13,9 +13,7 @@ function setColor(name) {
 	let theRoot = document.documentElement.style;
 	theRoot.setProperty("--" + name + "-color", localStorage.getItem(name + "Color"));
 }
-for (i = 0; i < names.length; i++) {
-	setColor(names[i]);
-}
+names.forEach(setColor);
 // Meta
 let head = document.getElementsByTagName("head")[0];
 function createMeta(name, content) {
@@ -37,7 +35,7 @@ let activeIndex = linkArray.indexOf(pathArray[pathArray.length - 1]);
 if (pathArray[pathArray.length - 1] == "") {
 	activeIndex = 0;
 }
-let createLink = function(element, index, array) {
+let createLink = function(element, index) {
 	li = document.createElement("li");
 	navbar.appendChild(li);
 	a = document.createElement("a");
@@ -50,30 +48,29 @@ let createLink = function(element, index, array) {
 }
 navbar.textContent = "";
 linkArray.forEach(createLink);
-let themes = navbar.lastChild.lastChild;
+let themes = navbar.lastChild;
 themes.classList.add("right");
-// Responsive navbar
-let header = document.getElementsByTagName("header")[0];
 // Open icon
+let header = document.getElementsByTagName("header")[0];
 let openIcon = document.createElement("h1");
 openIcon.id = "open-icon";
-openIcon.classList.add("shown");
 createText.call(openIcon, "︾");
 header.appendChild(openIcon);
 openIcon.addEventListener("click", function () {
-	navbar.classList.add("shown");
-	closeIcon.classList.add("shown");
-	openIcon.classList.remove("shown");
+	navbar.classList.remove("hidden");
+	closeIcon.classList.remove("hidden");
+	openIcon.classList.add("hidden");
 }, false);
 // Close icon
 let closeIcon = document.createElement("h1");
 closeIcon.id = "close-icon";
+closeIcon.classList.add("hidden");
 createText.call(closeIcon, "︽");
 header.appendChild(closeIcon);
 closeIcon.addEventListener("click", function () {
-	navbar.classList.remove("shown");
-	closeIcon.classList.remove("shown");
-	openIcon.classList.add("shown");
+	navbar.classList.add("hidden");
+	closeIcon.classList.add("hidden");
+	openIcon.classList.remove("hidden");
 }, false);
 // Footer
 let footer = document.getElementsByTagName("footer")[0];
