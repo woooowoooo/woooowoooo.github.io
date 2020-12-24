@@ -81,6 +81,10 @@ header h1 {
 #navbar li.right {
 	float: right;
 }
+#navbar p {
+	padding: 15px;
+	margin: 0;
+}
 #navbar a {
 	display: block;
 	padding: 15px;

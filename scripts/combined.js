@@ -29,6 +29,7 @@ createText.call(title, "woooowoooo's website");
 head.appendChild(title);
 // Navbar
 let navbar = document.getElementById("navbar");
+navbar.classList.add("hidden"); // If JS is disabled, the navbar should still be shown.
 const linkArray = ["index.html","sitemap.html","about.html","contact.html","donate.html","selector.html","themes.html"];
 const titleArray = ["Home","Sitemap","About","Contact","Donate","My Games","Themes"];
 let activeIndex = linkArray.indexOf(pathArray[pathArray.length - 1]);
