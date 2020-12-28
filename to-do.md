@@ -1,42 +1,64 @@
-﻿To-do:
+﻿## Content:
+
 - [x] This page
 - [x] House selector
-- [x] Navbar
 - [x] End SS project
-
-Content:
 - [x] More links
 - [x] TL;DR feature
 - [x] Content update
-- [X] Move stupid posts
+- [x] Move updates
 
-Organization:
-- [x] Navbar migration
+## Layout:
+
 - [x] Footer migration
 - [x] Meta tag migration
-- [x] Sitemap
-- [X] Upload sitemap
-- [X] XML Sitemap
-- [x] Script combining
+- [x] Combined script
 
-Graphics:
+### Device and browser support:
+
+- [x] `max-width: 1080px` layout
+- [x] `max-width: 640px` layout
+- [x] `max-width: 320px` layout
+- [x] Add HTML sitemap
+- [x] Show sitemap by default on all layouts
+
+### Header and navbar:
+
+- [x] Navigation bar
+- [x] Navbar migration
+- [x] Vertical open and close buttons
+
+### Search Engine Optimization:
+
+- [x] Add `robots.txt`
+- [x] Verify website on Google Search Console
+- [x] XML Sitemap
+- [x] Upload sitemap
+
+## Graphics:
+
 - [x] Graphics update
+- [x] Font size readability
+
+### Theming:
+
 - [x] Theme changing
 - [x] Theme storage
 - [x] Color update
-- [x] Font size readability
 - [ ] Quality themes
-- [x] Fifth text color variable
+- [x] Text color variable
+- [x] Font variable
+- [x] Automatic dark theme
+- [ ] Separate dark mode stylesheet
 
-Device and browser support:
-- [x] Mobile layout
-- [ ] Other browser support
+## Games:
 
-Terrible adventure game:
+### Terrible adventure game:
+
 - [x] Basic canvas stuff
 - [x] Audio support
 - [x] Ease future image and audio loading
 - [ ] Menu screen buttons
-- [X] Loading screen
+- [x] Loading screen
 - [ ] Make theme song
 - [ ] Do pixel art
