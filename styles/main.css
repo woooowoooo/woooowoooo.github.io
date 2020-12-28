@@ -9,8 +9,10 @@
 /* General items */
 * {
 	box-sizing: border-box;
+	font-family: var(--font-stack);
 }
 :root {
+	color-scheme: light dark;
 	--background-color: #3B3631;
 	--primary-color: blanchedalmond;
 	--secondary-color: #E0A458;
@@ -23,7 +25,6 @@ body {
 	margin: 0;
 	color: var(--text-color);
 	font-size: 18px;
-	font-family: var(--font-stack);
 }
 button, .button {
 	display: inline-block;
@@ -35,7 +36,6 @@ button, .button {
 	text-align: center;
 	color: var(--accent-color);
 	font-size: 1em;
-	font-family: var(--font-stack);
 	font-weight: normal;
 	transition-duration: .5s;
 	cursor: pointer;
@@ -134,6 +134,16 @@ footer {
 	color: var(--primary-color);
 	text-align: center;
 	font-style: italic;
+}
+/* Dark color schemes */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background-color: #9A7E6C;
+		--primary-color: #2C231B;
+		--secondary-color: #3B3631;
+		--accent-color: seashell;
+		--text-color: seashell;
+	}
 }
 /* Responsive design */
 @media (max-width: 1080px) {
