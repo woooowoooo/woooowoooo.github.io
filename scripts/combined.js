@@ -14,8 +14,17 @@ function setColor(name) {
 	root.setProperty("--" + name + "-color", localStorage.getItem(name + "Color"));
 }
 names.forEach(setColor);
-// Meta
+// Dark stylesheet
 let head = document.getElementsByTagName("head")[0];
+const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+let themeType = localStorage.getItem("themeType");
+let darkStylesheet = document.createElement("link");
+darkStylesheet.rel = "stylesheet";
+darkStylesheet.href = parentPath.repeat(childAmount) + "styles/dark.css";
+if (darkQuery.matches && themeType == null || themeType == "dark") {
+	head.appendChild(darkStylesheet);
+}
+// Meta
 function createMeta(name, content) {
 	let meta = document.createElement("meta");
 	meta.name = name;

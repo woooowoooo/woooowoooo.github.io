@@ -6,6 +6,13 @@ let buttons = document.getElementsByTagName("button");
 for (let button of buttons) {
 	button.addEventListener("click", function (item, index) {
 		names.forEach(changeTheme);
+		themeType = getProperty("--theme-type");
+		localStorage.setItem("themeType", themeType);
+		if (themeType == "dark") {
+			head.appendChild(darkStylesheet);
+		} else if (head == darkStylesheet.parentElement) {
+			head.removeChild(darkStylesheet);
+		}
 	});
 }
 function changeTheme(name, index) {

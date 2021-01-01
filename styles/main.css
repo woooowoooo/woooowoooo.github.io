@@ -6,6 +6,8 @@
 	font (weight, style, variant), text-decoration
 	transition-duration, list-style-type
 	cursor */
+/* Dark themes */
+@import url("dark.css") (prefers-color-scheme: dark);
 /* General items */
 * {
 	box-sizing: border-box;
@@ -138,12 +140,12 @@ footer {
 	text-align: center;
 	font-style: italic;
 }
-/* Dark color schemes */
+/* This is to prevent the quick flash of light theme before dark.css is loaded. */
 @media (prefers-color-scheme: dark) {
 	:root {
-		--background-color: #9A7E6C;
-		--primary-color: #2C231B;
-		--secondary-color: #3B3631;
+		--background-color: #3B3631;
+		--primary-color: #201912;
+		--secondary-color: #2C231B;
 		--accent-color: seashell;
 		--text-color: seashell;
 	}

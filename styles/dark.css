@@ -1,0 +1,9 @@
+/* Dark themes */
+#navbar a, footer {
+	color: var(--text-color);
+}
+@media (max-width: 1080px) {
+	header {
+		color: var(--text-color);
+	}
+}

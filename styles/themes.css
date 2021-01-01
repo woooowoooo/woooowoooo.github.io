@@ -7,6 +7,7 @@ button:hover {
 	color: var(--4color);
 }
 #default {
+	--theme-type: light;
 	--1color: #3B3631;
 	--2color: blanchedalmond;
 	--3color: #E0A458;
@@ -14,6 +15,7 @@ button:hover {
 	--5color: #2C231B;
 }
 #grayscale {
+	--theme-type: light;
 	--1color: #3F3F3F;
 	--2color: whitesmoke;
 	--3color: lightgray;
@@ -21,13 +23,15 @@ button:hover {
 	--5color: #3F3F3F;
 }
 #dark {
-	--1color: #9A7E6C;
-	--2color: #2C231B;
-	--3color: #3B3631;
-	--4color: seashell;
-	--5color: seashell;
+	--theme-type: dark;
+	--1color: #3B3631;
+	--2color: #201912;
+	--3color: #2C231B;
+	--4color: gold;
+	--5color: linen;
 }
 #neutral {
+	--theme-type: light;
 	--1color: #3F3F3F;
 	--2color: whitesmoke;
 	--3color: skyblue;
@@ -35,6 +39,7 @@ button:hover {
 	--5color: black;
 }
 #sollight {
+	--theme-type: light;
 	--1color: #073642;
 	--2color: #FDF6E3;
 	--3color: #EEE8D5;
@@ -42,13 +47,15 @@ button:hover {
 	--5color: #586E75;
 }
 #soldark {
-	--1color: #EEE8D5;
+	--theme-type: dark;
+	--1color: #073642;
 	--2color: #002B36;
-	--3color: #073642;
+	--3color: #002B36;
 	--4color: #DC322F;
 	--5color: #93A1A1;
 }
 #aquatic {
+	--theme-type: light;
 	--1color: #3B3631;
 	--2color: paleturquoise;
 	--3color: lightseagreen;
@@ -56,6 +63,7 @@ button:hover {
 	--5color: #2C231B;
 }
 #beach {
+	--theme-type: light;
 	--1color: #3B3631;
 	--2color: mediumaquamarine;
 	--3color: blanchedalmond;
@@ -63,6 +71,7 @@ button:hover {
 	--5color: #2C231B;
 }
 #forest {
+	--theme-type: light;
 	--1color: #4D2608;
 	--2color: olive;
 	--3color: navajowhite;
@@ -70,6 +79,7 @@ button:hover {
 	--5color: #2C231B;
 }
 #pastel {
+	--theme-type: light;
 	--1color: #3F3F3F;
 	--2color: powderblue;
 	--3color: lightsalmon;
@@ -77,6 +87,7 @@ button:hover {
 	--5color: #3F3F3F;
 }
 #sunrise {
+	--theme-type: light;
 	--1color: #4C1E36;
 	--2color: peachpuff;
 	--3color: lightcoral;
@@ -84,6 +95,7 @@ button:hover {
 	--5color: #4C1E36;
 }
 #tundra {
+	--theme-type: light;
 	--1color: #3F3F3F;
 	--2color: #DBE3E6;
 	--3color: #D9E65C;
@@ -91,6 +103,7 @@ button:hover {
 	--5color: black;
 }
 #red {
+	--theme-type: light;
 	--1color: #222211;
 	--2color: #FFECE1;
 	--3color: #FBA797;
@@ -98,6 +111,7 @@ button:hover {
 	--5color: black;
 }
 #yellow {
+	--theme-type: light;
 	--1color: #222211;
 	--2color: lightyellow;
 	--3color: khaki;
@@ -105,6 +119,7 @@ button:hover {
 	--5color: black;
 }
 #green {
+	--theme-type: light;
 	--1color: #222211;
 	--2color: #F7FFCD;
 	--3color: #C6F349;
@@ -112,6 +127,7 @@ button:hover {
 	--5color: black;
 }
 #blue {
+	--theme-type: light;
 	--1color: #222222;
 	--2color: lightcyan;
 	--3color: lightskyblue;
