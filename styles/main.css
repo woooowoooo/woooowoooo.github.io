@@ -29,15 +29,15 @@ body {
 button, .button {
 	display: inline-block;
 	background-color: var(--background-color);
-	width: 200px;
-	padding: 25px;
+	width: 10.5em;
+	padding: 1.2em;
 	border: none;
-	margin: 25px;
+	margin: 1.2em;
 	text-align: center;
 	color: var(--accent-color);
 	font-size: 1em;
 	font-weight: normal;
-	transition-duration: .5s;
+	transition-duration: 0.2s;
 	cursor: pointer;
 }
 .teaser{
@@ -91,7 +91,7 @@ header h1 {
 #navbar a {
 	display: block;
 	padding: 15px;
-	transition-duration: .5s;
+	transition-duration: 0.2s;
 	color: var(--secondary-color);
 	font-weight: normal;
 }
@@ -180,6 +180,11 @@ footer {
 @media (max-width: 640px) {
 	body {
 		font-size: 15px;
+	}
+	button {
+		width: 9em;
+		padding: 1em;
+		margin: 0.8em;
 	}
 	header {
 		padding: 0;
