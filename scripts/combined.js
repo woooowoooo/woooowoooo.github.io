@@ -7,11 +7,11 @@ const pathArray = location.href.split("/");
 const find = "woooowoooo.github.io";
 const childAmount = pathArray.length - pathArray.indexOf(find) - 2;
 const parentPath = "../";
-// Color storage
+// Theming
+let root = document.documentElement.style;
 const names = ["background", "primary", "secondary", "accent", "text"];
 function setColor(name) {
-	let theRoot = document.documentElement.style;
-	theRoot.setProperty("--" + name + "-color", localStorage.getItem(name + "Color"));
+	root.setProperty("--" + name + "-color", localStorage.getItem(name + "Color"));
 }
 names.forEach(setColor);
 // Meta
@@ -37,9 +37,9 @@ if (pathArray[pathArray.length - 1] == "") {
 	activeIndex = 0;
 }
 let createLink = function(element, index) {
-	li = document.createElement("li");
+	let li = document.createElement("li");
 	navbar.appendChild(li);
-	a = document.createElement("a");
+	let a = document.createElement("a");
 	a.href = parentPath.repeat(childAmount) + element;
 	a.textContent = titleArray[index];
 	li.appendChild(a);
@@ -76,6 +76,7 @@ closeIcon.addEventListener("click", function () {
 // Footer
 let footer = document.getElementsByTagName("footer")[0];
 function createLicense() {
+	createText.call(footer, "This work is licensed under a ");
 	let license = document.createElement("a");
 	license.rel = "license";
 	license.href = "http://creativecommons.org/licenses/by-sa/4.0/";
@@ -97,5 +98,4 @@ function createFig() {
 footer.innerHTML = "";
 createText.call(footer, "Made by Ryan Zhang");
 createFig();
-createText.call(footer, "This work is licensed under a ");
 createLicense();

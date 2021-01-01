@@ -18,7 +18,7 @@
 	--secondary-color: #E0A458;
 	--accent-color: orangered;
 	--text-color: #2C231B;
-	--font-stack: 'Century Gothic', AppleGothic, sans-serif;
+	--font-stack: "Century Gothic", AppleGothic, sans-serif;
 }
 body {
 	background-color: var(--background-color);
@@ -40,7 +40,7 @@ button, .button {
 	transition-duration: 0.2s;
 	cursor: pointer;
 }
-.teaser{
+.teaser {
 	width: 250px;
 	padding: 0;
 }
