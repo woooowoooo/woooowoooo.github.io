@@ -1,12 +1,11 @@
 // Canvas
 let canvas = document.getElementById("game");
-let screenSize = {
+let gameSize = {
 	x: 960,
 	y: 640
 };
-canvas.width = screenSize.x;
-canvas.height = screenSize.y;
-console.log("Canvas dimensions are " + screenSize.x + " by " + screenSize.y + ".");
+canvas.width = gameSize.x;
+canvas.height = gameSize.y;
 let canvasContext = canvas.getContext("2d");
 canvasContext.imageSmoothingEnabled = false;
 // Loading assets
@@ -84,29 +83,27 @@ let stateMachine = new StateMachine({
 		onTransition: function (lifecycle) {
 			console.log("State: " + lifecycle.transition);
 		},
-			canvasContext.rect(0, 0, screenSize.x, screenSize.y);
 		onBooting: function () {
+			canvasContext.rect(0, 0, gameSize.x, gameSize.y);
 			canvasContext.fillStyle = "rgb(0, 0, 0)";
 			canvasContext.fill();
 			canvasContext.font = "120px Century Gothic, Apple Gothic, AppleGothic, sans-serif";
 			canvasContext.textAlign = "center";
 			canvasContext.fillStyle = "rgb(255, 255, 255)";
-			canvasContext.fillText("LOADING", screenSize.x / 2, screenSize.y / 2);
+			canvasContext.fillText("LOADING", gameSize.x / 2, gameSize.y / 2);
 		},
-		onReady: function() {
+		onReady: function () {
 			console.log(cache);
-			canvasContext.clearRect(0, 0, canvas.width, canvas.height);
-			canvasContext.drawImage(cache.start, 0, 0, screenSize.x, screenSize.y);
+			canvasContext.clearRect(0, 0, gameSize.x, gameSize.y);
+			canvasContext.drawImage(cache.start, 0, 0, gameSize.x, gameSize.y);
 			loop();
 		},
-			canvasContext.rect(0, 0, screenSize.x, screenSize.y);
 		onPause: function () {
+			canvasContext.rect(0, 0, gameSize.x, gameSize.y);
 			canvasContext.fillStyle = "rgba(0, 0, 0, 0.5)";
 			canvasContext.fill();
-			canvasContext.font = "120px Century Gothic, Apple Gothic, AppleGothic, sans-serif";
-			canvasContext.textAlign = "center";
 			canvasContext.fillStyle = "rgb(255, 255, 255)";
-			canvasContext.fillText("PAUSED", screenSize.x / 2, screenSize.y / 2);
+			canvasContext.fillText("PAUSED", gameSize.x / 2, gameSize.y / 2);
 			sounds.forEach(function (assetName, index) {
 				if (!cache[assetName].paused) {
 					cache[assetName].pause();
@@ -115,8 +112,8 @@ let stateMachine = new StateMachine({
 				}
 			})
 		},
-			canvasContext.clearRect(0, 0, screenSize.x, screenSize.y);
 		onUnpause: function () {
+			canvasContext.clearRect(0, 0, gameSize.x, gameSize.y);
 			sounds.forEach(function (assetName, index) {
 				if (pausedAudio[index]) {
 					cache[assetName].play();
@@ -131,7 +128,7 @@ let stateMachine = new StateMachine({
 function loop() {
 	checkPause();
 	if (!stateMachine.is("paused")) {
-		canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+		canvasContext.clearRect(0, 0, gameSize.x, gameSize.y);
 		handle();
 		render();
 	}
@@ -163,7 +160,7 @@ function handle() {
 }
 // Rendering other items
 function render() {
-	canvasContext.drawImage(cache.start, 0, 0, screenSize.x, screenSize.y);
+	canvasContext.drawImage(cache.start, 0, 0, gameSize.x, gameSize.y);
 }
 // Start menu
 loadResources(images, sounds);

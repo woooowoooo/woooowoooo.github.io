@@ -1,24 +1,52 @@
-:root {
-	--canvas-width: 960px;
-	--canvas-height: 640px;
+#maindiv {
+	align-items: center;
+	justify-content: center;
+	min-height: 0;
 }
 canvas {
 	background-color: var(--secondary-color);
-	position: absolute;
-	left: 50%;
-	width: var(--canvas-width);
-	height: var(--canvas-height);
-	margin-right: -50%;
-	transform: translate(-50%);
+	width: 240px;
+	height: 160px;
 }
-main {
-	width: 100%;
-	padding: 0;
-	height: var(--canvas-height);
+@media (min-width: 360px) and (min-height: 240px) {
+	canvas {
+		width: 360px;
+		height: 240px;
+	}
 }
-@media (max-width: 960px) {
-	:root {
-		--canvas-width: 480px;
-		--canvas-height: 320px;
+@media (min-width: 480px) and (min-height: 320px) {
+	canvas {
+		width: 480px;
+		height: 320px;
+	}
+}
+@media (min-width: 600px) and (min-height: 400px) {
+	canvas {
+		width: 600px;
+		height: 400px;
+	}
+}
+@media (min-width: 720px) and (min-height: 480px) {
+	canvas {
+		width: 720px;
+		height: 480px;
+	}
+}
+@media (min-width: 840px) and (min-height: 560px) {
+	canvas {
+		width: 840px;
+		height: 560px;
+	}
+}
+@media (min-width: 960px) and (min-height: 640px) {
+	canvas {
+		width: 960px;
+		height: 640px;
+	}
+}
+@media (min-width: 1080px) and (min-height: 720px) {
+	canvas {
+		width: 1080px;
+		height: 720px;
 	}
 }
