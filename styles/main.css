@@ -57,6 +57,9 @@ b {
 	font-size: 1.2em;
 	font-weight: bold;
 }
+p, ul {
+	margin: 0.5em 0;
+}
 /* Header and navbar */
 header {
 	display: flex;
