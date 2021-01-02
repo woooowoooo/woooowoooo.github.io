@@ -8,31 +8,31 @@ button:hover {
 }
 #default {
 	--theme-type: light;
-	--1color: #3B3631;
+	--1color: hsl(30, 10%, 20%);
 	--2color: blanchedalmond;
-	--3color: #E0A458;
+	--3color: hsl(35, 70%, 60%);
 	--4color: orangered;
-	--5color: #2C231B;
+	--5color: hsl(30, 25%, 15%);
 }
 #grayscale {
 	--theme-type: light;
-	--1color: #3F3F3F;
+	--1color: hsl(0, 0%, 25%);
 	--2color: whitesmoke;
 	--3color: lightgray;
 	--4color: gray;
-	--5color: #3F3F3F;
+	--5color: hsl(0, 0%, 25%);
 }
 #dark {
 	--theme-type: dark;
-	--1color: #3B3631;
-	--2color: #201912;
-	--3color: #2C231B;
+	--1color: hsl(30, 15%, 25%);
+	--2color: hsl(30, 30%, 10%);
+	--3color: hsl(30, 25%, 15%);
 	--4color: gold;
 	--5color: linen;
 }
 #neutral {
 	--theme-type: light;
-	--1color: #3F3F3F;
+	--1color: hsl(0, 0%, 25%);
 	--2color: whitesmoke;
 	--3color: skyblue;
 	--4color: red;
@@ -56,81 +56,81 @@ button:hover {
 }
 #aquatic {
 	--theme-type: light;
-	--1color: #3B3631;
+	--1color: hsl(30, 10%, 20%);
 	--2color: paleturquoise;
 	--3color: lightseagreen;
 	--4color: yellowgreen;
-	--5color: #2C231B;
+	--5color: hsl(30, 25%, 15%);
 }
 #beach {
 	--theme-type: light;
-	--1color: #3B3631;
+	--1color: hsl(30, 10%, 20%);
 	--2color: mediumaquamarine;
 	--3color: blanchedalmond;
 	--4color: sandybrown;
-	--5color: #2C231B;
+	--5color: hsl(30, 25%, 15%);
 }
 #forest {
 	--theme-type: light;
-	--1color: #4D2608;
-	--2color: olive;
+	--1color: hsl(25, 80%, 18%);
+	--2color: hsl(65, 100%, 30%);
 	--3color: navajowhite;
 	--4color: lightcoral;
-	--5color: #2C231B;
+	--5color: hsl(30, 10%, 15%);
 }
 #pastel {
 	--theme-type: light;
-	--1color: #3F3F3F;
+	--1color: hsl(0, 0%, 25%);
 	--2color: powderblue;
 	--3color: lightsalmon;
 	--4color: lemonchiffon;
-	--5color: #3F3F3F;
+	--5color: hsl(0, 0%, 25%);
 }
 #sunrise {
 	--theme-type: light;
-	--1color: #4C1E36;
+	--1color: hsl(315, 40%, 20%);
 	--2color: peachpuff;
 	--3color: lightcoral;
-	--4color: lightyellow;
-	--5color: #4C1E36;
+	--4color: ivory;
+	--5color: hsl(315, 40%, 20%);
 }
 #tundra {
 	--theme-type: light;
-	--1color: #3F3F3F;
-	--2color: #DBE3E6;
-	--3color: #D9E65C;
-	--4color: #6FA600;
+	--1color: hsl(0, 0%, 25%);
+	--2color: hsl(200, 20%, 90%);
+	--3color: hsl(70, 75%, 60%);
+	--4color: hsl(80, 100%, 30%);
 	--5color: black;
 }
 #red {
 	--theme-type: light;
-	--1color: #222211;
-	--2color: #FFECE1;
-	--3color: #FBA797;
-	--4color: #37A600;
+	--1color: hsl(45, 30%, 10%);
+	--2color: hsl(25, 100%, 90%);
+	--3color: hsl(10, 90%, 75%);
+	--4color: hsl(90, 100%, 30%);
 	--5color: black;
 }
 #yellow {
 	--theme-type: light;
-	--1color: #222211;
+	--1color: hsl(60, 30%, 10%);
 	--2color: lightyellow;
 	--3color: khaki;
-	--4color: #E60000;
+	--4color: hsl(0, 100%, 45%);
 	--5color: black;
 }
 #green {
 	--theme-type: light;
-	--1color: #222211;
-	--2color: #F7FFCD;
-	--3color: #C6F349;
-	--4color: #E60000;
+	--1color: hsl(75, 30%, 10%);
+	--2color: hsl(70, 100%, 90%);
+	--3color: hsl(80, 80%, 65%);
+	--4color: hsl(210, 100%, 50%);
 	--5color: black;
 }
 #blue {
 	--theme-type: light;
-	--1color: #222222;
+	--1color: hsl(0, 0%, 10%);
 	--2color: lightcyan;
 	--3color: lightskyblue;
-	--4color: #CD5200;
+	--4color: hsl(25, 100%, 40%);
 	--5color: black;
 }

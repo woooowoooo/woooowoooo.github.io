@@ -15,11 +15,11 @@
 }
 :root {
 	color-scheme: light dark;
-	--background-color: #3B3631;
+	--background-color: hsl(30, 10%, 20%);
 	--primary-color: blanchedalmond;
-	--secondary-color: #E0A458;
+	--secondary-color: hsl(35, 70%, 60%);
 	--accent-color: orangered;
-	--text-color: #2C231B;
+	--text-color: hsl(30, 25%, 15%);
 	--font-stack: "Century Gothic", AppleGothic, sans-serif;
 }
 body {
@@ -143,11 +143,11 @@ footer {
 /* This is to prevent the quick flash of light theme before dark.css is loaded. */
 @media (prefers-color-scheme: dark) {
 	:root {
-		--background-color: #3B3631;
-		--primary-color: #201912;
-		--secondary-color: #2C231B;
-		--accent-color: seashell;
-		--text-color: seashell;
+		--background-color: hsl(30, 15%, 25%);
+		--primary-color: hsl(30, 30%, 10%);
+		--secondary-color: hsl(30, 25%, 15%);
+		--accent-color: gold;
+		--text-color: linen;
 	}
 }
 /* Responsive design */
