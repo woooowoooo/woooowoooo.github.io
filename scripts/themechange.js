@@ -22,4 +22,7 @@ function changeTheme(name, index) {
 };
 document.getElementById("clear").addEventListener("click", function () {
 	localStorage.clear();
+	if (darkQuery.matches) {
+		head.appendChild(darkStylesheet);
+	}
 });
