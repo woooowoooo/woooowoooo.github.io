@@ -31,10 +31,10 @@ body {
 button, .button {
 	display: inline-block;
 	background-color: var(--background-color);
-	width: 10.5em;
-	padding: 1.2em;
+	width: 9.5em;
+	padding: 1.25em;
 	border: none;
-	margin: 1.2em;
+	margin: 1em;
 	text-align: center;
 	color: var(--accent-color);
 	font-size: 1em;
@@ -152,6 +152,10 @@ footer {
 }
 /* Responsive design */
 @media (max-width: 1080px) {
+	button {
+		padding: 1em;
+		margin: 0.5em;
+	}
 	header {
 		background-color: var(--background-color);
 		color: var(--secondary-color);
@@ -182,11 +186,6 @@ footer {
 @media (max-width: 640px) {
 	body {
 		font-size: 15px;
-	}
-	button {
-		width: 9em;
-		padding: 1em;
-		margin: 0.8em;
 	}
 	header {
 		padding: 0;
