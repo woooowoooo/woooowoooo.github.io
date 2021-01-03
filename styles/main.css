@@ -1,19 +1,16 @@
-/* My order in property listing is:
-	position, left, top, display, flex, background-color
-	width, height, padding, border, margin
-	line-height
-	text-align, color, font (size, family),
-	font (weight, style, variant), text-decoration
-	transition-duration, list-style-type
-	cursor */
-/* Dark themes */
-@import url("dark.css") (prefers-color-scheme: dark);
+/* Property order:
+	display, float, flexbox, background-color,
+	width, height, padding, border, margin,
+	line-height, text-align, color, font, text-decoration,
+	transition-duration, list-style-type, cursor */
 /* General items */
+@import url("dark.css") (prefers-color-scheme: dark); /* Dark themes */
 * {
 	box-sizing: border-box;
 	font-family: var(--font-stack);
 }
 :root {
+	font-size: 18px;
 	color-scheme: light dark;
 	--background-color: hsl(30, 10%, 20%);
 	--primary-color: blanchedalmond;
@@ -26,25 +23,6 @@ body {
 	background-color: var(--background-color);
 	margin: 0;
 	color: var(--text-color);
-	font-size: 18px;
-}
-button, .button {
-	display: inline-block;
-	background-color: var(--background-color);
-	width: 9.5em;
-	padding: 1.25em;
-	border: none;
-	margin: 1em;
-	text-align: center;
-	color: var(--accent-color);
-	font-size: 1em;
-	font-weight: normal;
-	transition-duration: 0.2s;
-	cursor: pointer;
-}
-.teaser {
-	width: 250px;
-	padding: 0;
 }
 hr {
 	border-style: solid;
@@ -57,10 +35,39 @@ a {
 }
 b {
 	font-size: 1.2em;
-	font-weight: bold;
 }
 p, ul {
 	margin: 0.5em 0;
+}
+/* Button styling */
+button, .button {
+	background-color: var(--background-color);
+	width: 9.5em;
+	padding: 1.25em;
+	margin: 1em;
+	color: var(--accent-color);
+	transition-duration: 0.2s;
+}
+button {
+	border: none;
+	font-size: 1em;
+	cursor: pointer;
+}
+.button {
+	display: inline-block;
+	text-align: center;
+	font-weight: normal;
+}
+.teaser {
+	width: 240px;
+	padding: 0;
+}
+.teaser img {
+	display: block;
+}
+.teaser p {
+	padding: 1em;
+	margin: 0;
 }
 /* Header and navbar */
 header {
@@ -113,10 +120,10 @@ header h1 {
 	color: var(--accent-color);
 }
 #open-icon {
-	padding-top: calc(0.67em * 2 / 3);
+	padding-top: 1.34rem;
 }
 #close-icon {
-	padding-bottom: calc(0.67em * 2 / 3);
+	padding-bottom: 1.34rem;
 }
 /* Layout */
 #maindiv {
@@ -140,7 +147,7 @@ footer {
 	text-align: center;
 	font-style: italic;
 }
-/* This is to prevent the quick flash of light theme before dark.css is loaded. */
+/* Prevents flash of default colors before dark.css is loaded. */
 @media (prefers-color-scheme: dark) {
 	:root {
 		--background-color: hsl(30, 15%, 25%);
@@ -161,10 +168,10 @@ footer {
 		color: var(--secondary-color);
 	}
 	header h1 {
-		margin: 0.67em;
+		margin: 1.34rem;
 	}
 	#open-icon, #close-icon {
-		margin-left: calc(-0.67em * 2 / 3);
+		margin-left: -1.34rem;
 	}
 	#open-icon:not(.hidden), #close-icon:not(.hidden) {
 		display: initial;
@@ -184,18 +191,11 @@ footer {
 	}
 }
 @media (max-width: 640px) {
-	body {
+	:root {
 		font-size: 15px;
 	}
 	header {
 		padding: 0;
-	}
-	#maindiv {
-		flex-direction: column;
-	}
-	aside, main {
-		width: 100%;
-		min-height: 150px;
 	}
 	#navbar {
 		display: flex;
@@ -210,20 +210,28 @@ footer {
 	#navbar li.right {
 		flex-grow: auto;
 	}
+	#maindiv {
+		flex-direction: column;
+		min-height: 0;
+	}
+	aside, main {
+		width: 100%;
+		padding-bottom: 50px;
+	}
 }
 @media (max-width: 320px) {
-	body {
+	:root {
 		font-size: 12px;
 	}
 	header {
 		flex-direction: column;
 	}
 	header h1 {
-		margin: calc(0.67em / 2);
+		margin: 0.67rem;
 	}
 	#open-icon, #close-icon {
 		width: 100%;
-		margin-top: calc(-0.67em * 5 / 6);
+		margin-top: calc(-5rem / 3);
 		margin-left: 0;
 	}
 }
