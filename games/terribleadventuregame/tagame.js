@@ -87,7 +87,7 @@ let stateMachine = new StateMachine({
 			canvasContext.rect(0, 0, gameSize.x, gameSize.y);
 			canvasContext.fillStyle = "rgb(0, 0, 0)";
 			canvasContext.fill();
-			canvasContext.font = "120px Century Gothic, Apple Gothic, AppleGothic, sans-serif";
+			canvasContext.font = "120px Century Gothic, AppleGothic, sans-serif";
 			canvasContext.textAlign = "center";
 			canvasContext.fillStyle = "rgb(255, 255, 255)";
 			canvasContext.fillText("LOADING", gameSize.x / 2, gameSize.y / 2);
