@@ -28,7 +28,7 @@
 - [x] Navbar migration
 - [x] Vertical open and close buttons
 
-### Search Engine Optimization:
+## Search Engine Optimization:
 
 - [x] Add `robots.txt`
 - [x] Verify website on Google Search Console
@@ -39,6 +39,7 @@
 
 - [x] Graphics update
 - [x] Font size readability
+- [ ] Favicon
 
 ### Theming:
 
@@ -48,8 +49,12 @@
 - [ ] Quality themes
 - [x] Text color variable
 - [x] Font variable
+
+#### Dark themes:
+
 - [x] Automatic dark theme
-- [ ] Separate dark mode stylesheet
+- [x] Separate dark mode stylesheet
+- [ ] Automatic dark mode detection
 
 ## Games:
 
@@ -62,3 +67,4 @@
 - [x] Loading screen
 - [ ] Make theme song
 - [ ] Do pixel art
+- [ ] Custom fonts
