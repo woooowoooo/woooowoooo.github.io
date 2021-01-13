@@ -50,68 +50,61 @@ let noneStylesheet = createLink("stylesheet", "styles/none.css", false);
 if (themeType == "none") {
 	head.appendChild(noneStylesheet);
 }
+// Header
+let header = document.getElementsByTagName("header")[0];
+function createIcon(iconId, iconText, iconFunction) {
+	let icon = document.createElement("h1");
+	icon.id = iconId;
+	createText.call(icon, iconText);
+	header.appendChild(icon);
+	icon.addEventListener("click", iconFunction, false);
+	return icon;
+}
+function hide(element) {
+	element.classList.add("hidden");
+}
+function unhide(element) {
+	element.classList.remove("hidden");
+}
+let openIcon = createIcon("open-icon", "︾", function () {
+	unhide(navbar);
+	unhide(closeIcon);
+	hide(openIcon);
+});
+let closeIcon = createIcon("close-icon", "︽", function () {
+	hide(navbar);
+	hide(closeIcon);
+	unhide(openIcon);
+});
+hide(closeIcon);
 // Navbar
 let navbar = document.getElementById("navbar");
-navbar.classList.add("hidden"); // If JS is disabled, the navbar should still be shown.
-const linkArray = [
-	"index.html",
-	"sitemap.html",
-	"about.html",
-	"contact.html",
-	"donate.html",
-	"selector.html",
-	"themes.html"
-];
-const titleArray = [
-	"Home",
-	"Sitemap",
-	"About",
-	"Contact",
-	"Donate",
-	"My Games",
-	"Themes"
-];
-let activeIndex = linkArray.indexOf(pathArray[pathArray.length - 1]);
-if (pathArray[pathArray.length - 1] == "") {
-	activeIndex = 0;
-}
-let createLink = function(element, index) {
+navbar.innerHTML = "";
+navbar.classList.add("hidden"); // Navbar is shown if JS is disabled.
+const links = {
+	"index.html": "Home",
+	"sitemap.html": "Sitemap",
+	"about.html": "About",
+	"contact.html": "Contact",
+	"donate.html": "Donate",
+	"selector.html": "My Games",
+	"themes.html": "Themes"
+};
+const pageName = pathArray[pathArray.length - 1];
+function createNavbarLink(page) {
 	let li = document.createElement("li");
 	navbar.appendChild(li);
 	let a = document.createElement("a");
-	a.textContent = titleArray[index];
 	a.href = parentPath + page;
+	a.textContent = links[page];
 	li.appendChild(a);
-	if (index == activeIndex) {
+	if (pageName == page) {
 		a.classList.add("active");
 	}
 }
-navbar.textContent = "";
-linkArray.forEach(createLink);
+Object.keys(links).forEach(createNavbarLink);
 let themes = navbar.lastChild;
 themes.classList.add("right");
-// Open icon
-let header = document.getElementsByTagName("header")[0];
-let openIcon = document.createElement("h1");
-openIcon.id = "open-icon";
-createText.call(openIcon, "︾");
-header.appendChild(openIcon);
-openIcon.addEventListener("click", function () {
-	navbar.classList.remove("hidden");
-	closeIcon.classList.remove("hidden");
-	openIcon.classList.add("hidden");
-}, false);
-// Close icon
-let closeIcon = document.createElement("h1");
-closeIcon.id = "close-icon";
-closeIcon.classList.add("hidden");
-createText.call(closeIcon, "︽");
-header.appendChild(closeIcon);
-closeIcon.addEventListener("click", function () {
-	navbar.classList.add("hidden");
-	closeIcon.classList.add("hidden");
-	openIcon.classList.remove("hidden");
-}, false);
 // Footer
 let footer = document.getElementsByTagName("footer")[0];
 footer.innerHTML = "";
