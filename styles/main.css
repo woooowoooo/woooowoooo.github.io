@@ -63,6 +63,8 @@ button {
 }
 .teaser img {
 	display: block;
+	width: 240px;
+	image-rendering: crisp-edges;
 }
 .teaser p {
 	padding: 1em;
