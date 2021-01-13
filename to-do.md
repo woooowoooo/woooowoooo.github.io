@@ -3,10 +3,11 @@
 - [x] This page
 - [x] House selector
 - [x] End SS project
-- [x] More links
+- [x] More pages
 - [x] TL;DR feature
 - [x] Content update
-- [x] Move updates
+- [x] Hide updates
+- [x] Bookmarks page
 
 ## Layout:
 
@@ -34,27 +35,27 @@
 - [x] Verify website on Google Search Console
 - [x] XML Sitemap
 - [x] Upload sitemap
+- [ ] Structured Data (JSON)
 
 ## Graphics:
 
 - [x] Graphics update
-- [x] Font size readability
-- [ ] Favicon
+- [x] Readable font size
+- [ ] Create favicon
 
 ### Theming:
 
 - [x] Theme changing
 - [x] Theme storage
 - [x] Color update
-- [ ] Quality themes
+- [ ] Better contrast themes
 - [x] Text color variable
-- [x] Font variable
+- [ ] Font variable
 
 #### Dark themes:
 
 - [x] Automatic dark theme
 - [x] Separate dark mode stylesheet
-- [ ] Automatic dark mode detection
 
 ## Games:
 
@@ -65,6 +66,9 @@
 - [x] Ease future image and audio loading
 - [ ] Menu screen buttons
 - [x] Loading screen
-- [ ] Make theme song
-- [ ] Do pixel art
-- [ ] Custom fonts
+- [ ] Create theme song
+- [x] Custom fonts
+
+### Jumping game:
+
+- [ ] Reformatting
