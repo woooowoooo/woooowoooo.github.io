@@ -9,11 +9,11 @@ const childAmount = pathArray.length - pathArray.indexOf(find) - 2;
 const parentPath = "../".repeat(childAmount);
 // Theming
 let root = document.documentElement.style;
-const names = ["background", "primary", "secondary", "accent", "text"];
+const colorNames = ["background", "primary", "secondary", "accent", "text"];
 function setColor(name) {
 	root.setProperty("--" + name + "-color", localStorage.getItem(name + "Color"));
 }
-names.forEach(setColor);
+colorNames.forEach(setColor);
 // Meta
 let head = document.getElementsByTagName("head")[0];
 let title = document.createElement("title");

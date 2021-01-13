@@ -30,6 +30,14 @@ button:hover {
 	--4color: gold;
 	--5color: linen;
 }
+#none {
+	--theme-type: none;
+	--1color: invalid;
+	--2color: invalid;
+	--3color: invalid;
+	--4color: invalid;
+	--5color: invalid;
+}
 #neutral {
 	--theme-type: light;
 	--1color: hsl(0, 0%, 25%);
