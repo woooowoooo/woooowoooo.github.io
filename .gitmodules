@@ -1,0 +1,3 @@
+[submodule "games/ludumdare48"]
+	path = games/ludumdare48
+	url = https://github.com/woooowoooo/ludumdare48
