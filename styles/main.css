@@ -112,19 +112,13 @@ header h1 {
 #open-icon, #close-icon {
 	display: none;
 	flex: none;
-	width: 100px;
 	margin: 0;
 	font-size: 3em;
 	cursor: pointer;
+	writing-mode: vertical-rl;
 }
 #open-icon:hover, #close-icon:hover {
 	color: var(--accent-color);
-}
-#open-icon {
-	padding-top: 1.34rem;
-}
-#close-icon {
-	padding-bottom: 1.34rem;
 }
 /* Layout */
 #maindiv {
@@ -170,9 +164,6 @@ footer {
 	}
 	header h1 {
 		margin: 1.34rem;
-	}
-	#open-icon, #close-icon {
-		margin-left: -1.34rem;
 	}
 	#open-icon:not(.hidden), #close-icon:not(.hidden) {
 		display: initial;

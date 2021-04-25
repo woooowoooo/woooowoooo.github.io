@@ -65,13 +65,13 @@ function hide(element) {
 }
 function unhide(element) {
 	element.classList.remove("hidden");
-}
-let openIcon = createIcon("open-icon", "︾", function () {
+};
+let openIcon = createIcon("open-icon", "⟫", function () {
 	unhide(navbar);
 	unhide(closeIcon);
 	hide(openIcon);
 });
-let closeIcon = createIcon("close-icon", "︽", function () {
+let closeIcon = createIcon("close-icon", "⟪", function () {
 	hide(navbar);
 	hide(closeIcon);
 	unhide(openIcon);
