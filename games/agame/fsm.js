@@ -1,6 +1,6 @@
-/* I am just using this library for a game.
+/* I DID NOT CREATE THIS LIBRARY.
 This library was actually made by Jake Gordon of the blog https://codeincomplete.com/.
-It is licensed under the MIT license, as shown below.
+It is licensed under the MIT license, a copy of which is put below.
 
 Copyright (c) 2012, 2013, 2014, 2015, 2016, 2017, 2018, Jake Gordon and contributors
 

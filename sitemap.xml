@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>https://woooowoooo.github.io/</loc>
+		<loc>https://woooowoooo.github.io/index.html</loc>
 	</url>
 	<url>
-		<loc>https://woooowoooo.github.io/sitemap</loc>
+		<loc>https://woooowoooo.github.io/sitemap.html</loc>
 	</url>
 	<url>
-		<loc>https://woooowoooo.github.io/about</loc>
+		<loc>https://woooowoooo.github.io/about.html</loc>
 	</url>
 	<url>
-		<loc>https://woooowoooo.github.io/contact</loc>
+		<loc>https://woooowoooo.github.io/contact.html</loc>
 	</url>
 	<url>
-		<loc>https://woooowoooo.github.io/donate</loc>
+		<loc>https://woooowoooo.github.io/donate.html</loc>
 	</url>
 	<url>
-		<loc>https://woooowoooo.github.io/selector</loc>
+		<loc>https://woooowoooo.github.io/selector.html</loc>
 	</url>
 	<url>
-		<loc>https://woooowoooo.github.io/themes</loc>
+		<loc>https://woooowoooo.github.io/games/agame/index.html</loc>
 	</url>
 	<url>
-		<loc>https://woooowoooo.github.io/games/terribleadventuregame/tagame.html</loc>
+		<loc>https://woooowoooo.github.io/games/jgame/index.html</loc>
+	</url>
+	<url>
+		<loc>https://woooowoooo.github.io/themes.html</loc>
 	</url>
 </urlset>
