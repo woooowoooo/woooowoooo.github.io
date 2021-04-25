@@ -1,6 +1,6 @@
 // General things
-function createText(text) {
-	this.appendChild(document.createTextNode(text));
+function createText(parent, text) {
+	parent.appendChild(document.createTextNode(text));
 }
 // For pages up the directories
 const pathArray = location.href.split("/");
@@ -17,7 +17,7 @@ colorNames.forEach(setColor);
 // Meta
 let head = document.getElementsByTagName("head")[0];
 let title = document.createElement("title");
-createText.call(title, "woooowoooo's website");
+createText(title, "woooowoooo's website");
 head.appendChild(title);
 function createMeta(name, content) {
 	let meta = document.createElement("meta");
@@ -55,7 +55,7 @@ let header = document.getElementsByTagName("header")[0];
 function createIcon(iconId, iconText, iconFunction) {
 	let icon = document.createElement("h1");
 	icon.id = iconId;
-	createText.call(icon, iconText);
+	createText(icon, iconText);
 	header.appendChild(icon);
 	icon.addEventListener("click", iconFunction, false);
 	return icon;
@@ -108,22 +108,30 @@ themes.classList.add("right");
 // Footer
 let footer = document.getElementsByTagName("footer")[0];
 footer.innerHTML = "";
-createText.call(footer, "Made by woooowoooo");
-// Create license figure
+let footerText1 = document.createElement("p");
+createText(footerText1, "Made by woooowoooo.");
+footer.appendChild(footerText1);
+let footerText2 = document.createElement("p");
+createText(footerText2, "Check out this website's source code ");
+let githubLink = document.createElement("a");
+githubLink.href = "https://github.com/woooowoooo/woooowoooo.github.io/";
+createText(githubLink, "here.");
+footerText2.appendChild(githubLink);
+footer.appendChild(footerText2);
+// Create license
 let fig = document.createElement("figure");
 let image = document.createElement("img");
 image.alt = "CC BY-SA 4.0 (image could not be shown)";
 image.src = parentPath + "images/CC-BYSA-license.png";
 image.style.borderWidth = 0;
 let caption = document.createElement("figcaption");
-createText.call(caption, "CC BY-SA 4.0");
+createText(caption, "CC BY-SA 4.0");
 fig.appendChild(image);
 fig.appendChild(caption);
 footer.appendChild(fig);
-// Create license
-createText.call(footer, "This work is licensed under a ");
+createText(footer, "This website is licensed under a ");
 let license = document.createElement("a");
 license.rel = "license";
 license.href = "https://creativecommons.org/licenses/by-sa/4.0/";
-createText.call(license, "Creative Commons Attribution-ShareAlike 4.0 International License");
+createText(license, "Creative Commons Attribution-ShareAlike 4.0 International License.");
 footer.appendChild(license);
