@@ -64,7 +64,16 @@ button {
 .teaser img {
 	display: block;
 	width: 240px;
+	background: var(--secondary-color) url(../images/no-teaser.png) no-repeat;
+	color: transparent;
+	background-size: cover;
 	image-rendering: crisp-edges;
+}
+.teaser img:before {
+	content: "";
+	display: block;
+	height: 160px;
+	width: 240px;
 }
 .teaser p {
 	padding: 1em;
