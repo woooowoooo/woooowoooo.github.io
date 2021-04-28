@@ -1,8 +1,10 @@
 /* Property order:
-	display, float, flexbox, background-color,
-	width, height, padding, border, margin,
-	text-align, color, font, line-height, text-decoration,
-	text-indent, list-style-type, transition-duration, cursor */
+ * Position (display, flexbox, float, grid),
+ * Box model (height, width, padding, border, margin),
+ * Styles (background),
+ * Text position (writing-mode, text-align, text-indent, line-height),
+ * Text styles (color, font, text-decoration),
+ * Everything else in alphabetical order */
 /* General items */
 @import url("dark.css") (prefers-color-scheme: dark); /* Dark themes */
 * {
@@ -18,8 +20,8 @@
 	--font-stack: Futura, "Century Gothic", AppleGothic, sans-serif;
 }
 body {
-	background-color: var(--background-color);
 	margin: 0;
+	background-color: var(--background-color);
 	color: var(--text-color);
 	font: 18px var(--font-stack);
 }
@@ -40,10 +42,10 @@ p, ul {
 }
 /* Button styling */
 button, .button {
-	background-color: var(--background-color);
 	width: 9.5em;
 	padding: 1.25em;
 	margin: 1em;
+	background-color: var(--background-color);
 	color: var(--accent-color);
 	transition-duration: 0.2s;
 }
@@ -82,8 +84,8 @@ button {
 /* Header and navbar */
 header {
 	display: flex;
-	background-color: var(--primary-color);
 	padding: 20px;
+	background-color: var(--primary-color);
 	text-align: center;
 	line-height: 1.25;
 }
@@ -91,9 +93,9 @@ header h1 {
 	flex: auto;
 }
 #navbar {
-	background-color: var(--background-color);
 	overflow: hidden;
 	margin: 0;
+	background-color: var(--background-color);
 	color: var(--accent-color);
 	list-style-type: none;
 }
@@ -110,9 +112,9 @@ header h1 {
 #navbar a {
 	display: block;
 	padding: 15px;
-	transition-duration: 0.2s;
 	color: var(--secondary-color);
 	font-weight: normal;
+	transition-duration: 0.2s;
 }
 #navbar a.active, #navbar a:hover:not(.active), a:hover, button:hover {
 	background-color: var(--accent-color);
@@ -122,9 +124,9 @@ header h1 {
 	display: none;
 	flex: none;
 	margin: 0;
+	writing-mode: vertical-rl;
 	font-size: 3em;
 	cursor: pointer;
-	writing-mode: vertical-rl;
 }
 #open-icon:hover, #close-icon:hover {
 	color: var(--accent-color);
@@ -136,19 +138,19 @@ header h1 {
 	background-color: var(--primary-color);
 }
 aside {
-	background-color: var(--secondary-color);
 	width: 20%;
 	padding: 20px;
+	background-color: var(--secondary-color);
 }
 main {
 	width: 80%;
 	padding: 20px;
 }
 footer {
-	background-color: var(--background-color);
 	padding: 15px;
-	color: var(--primary-color);
+	background-color: var(--background-color);
 	text-align: center;
+	color: var(--primary-color);
 	font-style: italic;
 }
 /* Prevents flash of default colors before dark.css is loaded. */
