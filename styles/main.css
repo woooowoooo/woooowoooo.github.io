@@ -17,7 +17,7 @@
 	--secondary-color: hsl(35, 70%, 60%);
 	--accent-color: orangered;
 	--text-color: hsl(30, 25%, 15%);
-	--font-stack: Futura, "Century Gothic", AppleGothic, "URW Gothic", sans-serif;
+	--font-stack: Futura, Avenir, "Century Gothic", "URW Gothic", sans-serif;
 }
 body {
 	margin: 0;

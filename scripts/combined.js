@@ -34,20 +34,19 @@ function createLink(relation, destination, append) {
 	link.href = parentPath + destination;
 	if (append) {
 		head.appendChild(link);
-	} else {
-		return link;
 	}
+	return link;
 }
 createLink("icon", "favicon.ico", true);
 // Theme stylesheets
 let darkStylesheet = createLink("stylesheet", "styles/dark.css", false);
 const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
 let themeType = localStorage.getItem("themeType");
-if (darkQuery.matches && themeType == null || themeType == "dark") {
+if (darkQuery.matches && themeType === null || themeType === "dark") {
 	head.appendChild(darkStylesheet);
 }
 let noneStylesheet = createLink("stylesheet", "styles/none.css", false);
-if (themeType == "none") {
+if (themeType === "none") {
 	head.appendChild(noneStylesheet);
 }
 // Header
@@ -98,7 +97,7 @@ function createNavbarLink(page) {
 	a.href = parentPath + page;
 	a.textContent = links[page];
 	li.appendChild(a);
-	if (pageName == page) {
+	if (pageName === page) {
 		a.classList.add("active");
 	}
 }
@@ -108,16 +107,13 @@ themes.classList.add("right");
 // Footer
 let footer = document.getElementsByTagName("footer")[0];
 footer.innerHTML = "";
-let footerText1 = document.createElement("p");
-createText(footerText1, "Made by woooowoooo.");
-footer.appendChild(footerText1);
-let footerText2 = document.createElement("p");
-createText(footerText2, "Check out this website's source code ");
+let footerText = document.createElement("p");
+createText(footerText, "Made by woooowoooo. Check out this website's ");
 let githubLink = document.createElement("a");
 githubLink.href = "https://github.com/woooowoooo/woooowoooo.github.io/";
-createText(githubLink, "here.");
-footerText2.appendChild(githubLink);
-footer.appendChild(footerText2);
+createText(githubLink, "source code.");
+footerText.appendChild(githubLink);
+footer.appendChild(footerText);
 // Create license
 let fig = document.createElement("figure");
 let image = document.createElement("img");

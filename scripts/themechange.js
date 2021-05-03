@@ -8,11 +8,11 @@ function changeTheme(name, index) {
 	root.setProperty("--" + name + "-color", color); // root is from combined.js
 	localStorage.setItem(name + "Color", color);
 }
-function conditionalAppend(condition) {
+function conditionalAppend(element, condition) {
 	if (condition) {
-		head.appendChild(this);
-	} else if (head == this.parentElement) {
-		head.removeChild(this);
+		head.appendChild(element);
+	} else if (head === element.parentElement) {
+		head.removeChild(element);
 	}
 }
 // Script starts here
@@ -22,11 +22,11 @@ for (let button of buttons) {
 		colorNames.forEach(changeTheme); // colorNames is from combined.js
 		themeType = getProperty("--theme-type");
 		localStorage.setItem("themeType", themeType);
-		conditionalAppend.call(darkStylesheet, themeType == "dark");
-		conditionalAppend.call(noneStylesheet, themeType == "none");
+		conditionalAppend(darkStylesheet, themeType === "dark");
+		conditionalAppend(noneStylesheet, themeType === "none");
 	});
 }
 document.getElementById("clear").addEventListener("click", function () {
 	localStorage.clear();
-	conditionalAppend.call(darkStylesheet, darkQuery.matches);
+	conditionalAppend(darkStylesheet, darkQuery.matches);
 });
