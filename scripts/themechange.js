@@ -4,7 +4,7 @@ function getProperty(name) {
 	return style.getPropertyValue(name).trim(); // For some reason CSS does not ignore leading whitespace.
 }
 function changeTheme(name, index) {
-	let color = getProperty("--" + (index + 1) + "color");
+	let color = getProperty("--color" + (index + 1));
 	root.setProperty("--" + name + "-color", color); // root is from combined.js
 	localStorage.setItem(name + "Color", color);
 }
@@ -18,7 +18,7 @@ function conditionalAppend(element, condition) {
 // Script starts here
 let buttons = document.getElementsByTagName("button");
 for (let button of buttons) {
-	button.addEventListener("click", function (item, index) {
+	button.addEventListener("click", function () {
 		colorNames.forEach(changeTheme); // colorNames is from combined.js
 		themeType = getProperty("--theme-type");
 		localStorage.setItem("themeType", themeType);

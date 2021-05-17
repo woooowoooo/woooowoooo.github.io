@@ -1,144 +1,144 @@
 button {
-	background-color: var(--2color);
-	color: var(--5color);
+	background-color: var(--color2);
+	color: var(--color5);
 }
 button:hover {
-	background-color: var(--3color);
-	color: var(--4color);
+	background-color: var(--color3);
+	color: var(--color4);
 }
 #default {
 	--theme-type: light;
-	--1color: hsl(30, 10%, 20%);
-	--2color: blanchedalmond;
-	--3color: hsl(35, 70%, 60%);
-	--4color: orangered;
-	--5color: hsl(30, 25%, 15%);
+	--color1: hsl(30, 10%, 20%);
+	--color2: blanchedalmond;
+	--color3: hsl(35, 70%, 60%);
+	--color4: orangered;
+	--color5: hsl(30, 25%, 15%);
 }
 #grayscale {
 	--theme-type: light;
-	--1color: hsl(0, 0%, 25%);
-	--2color: whitesmoke;
-	--3color: lightgray;
-	--4color: gray;
-	--5color: hsl(0, 0%, 25%);
+	--color1: hsl(0, 0%, 25%);
+	--color2: whitesmoke;
+	--color3: lightgray;
+	--color4: gray;
+	--color5: hsl(0, 0%, 25%);
 }
 #dark {
 	--theme-type: dark;
-	--1color: hsl(30, 15%, 25%);
-	--2color: hsl(30, 30%, 10%);
-	--3color: hsl(30, 25%, 15%);
-	--4color: gold;
-	--5color: linen;
+	--color1: hsl(30, 15%, 25%);
+	--color2: hsl(30, 30%, 10%);
+	--color3: hsl(30, 25%, 15%);
+	--color4: gold;
+	--color5: linen;
 }
 #none {
 	--theme-type: none;
-	--1color: invalid;
-	--2color: invalid;
-	--3color: invalid;
-	--4color: invalid;
-	--5color: invalid;
+	--color1: invalid;
+	--color2: invalid;
+	--color3: invalid;
+	--color4: invalid;
+	--color5: invalid;
 }
 #neutral {
 	--theme-type: light;
-	--1color: hsl(0, 0%, 25%);
-	--2color: whitesmoke;
-	--3color: skyblue;
-	--4color: red;
-	--5color: black;
+	--color1: hsl(0, 0%, 25%);
+	--color2: whitesmoke;
+	--color3: skyblue;
+	--color4: red;
+	--color5: black;
 }
 #sollight {
 	--theme-type: light;
-	--1color: #073642;
-	--2color: #FDF6E3;
-	--3color: #EEE8D5;
-	--4color: #DC322F;
-	--5color: #586E75;
+	--color1: #073642;
+	--color2: #FDF6E3;
+	--color3: #EEE8D5;
+	--color4: #DC322F;
+	--color5: #586E75;
 }
 #soldark {
 	--theme-type: dark;
-	--1color: #073642;
-	--2color: #002B36;
-	--3color: #002B36;
-	--4color: #DC322F;
-	--5color: #93A1A1;
+	--color1: #073642;
+	--color2: #002B36;
+	--color3: #002B36;
+	--color4: #DC322F;
+	--color5: #93A1A1;
 }
 #aquatic {
 	--theme-type: light;
-	--1color: hsl(30, 10%, 20%);
-	--2color: paleturquoise;
-	--3color: lightseagreen;
-	--4color: yellowgreen;
-	--5color: hsl(30, 25%, 15%);
+	--color1: hsl(30, 10%, 20%);
+	--color2: paleturquoise;
+	--color3: lightseagreen;
+	--color4: yellowgreen;
+	--color5: hsl(30, 25%, 15%);
 }
 #beach {
 	--theme-type: light;
-	--1color: hsl(30, 10%, 20%);
-	--2color: mediumaquamarine;
-	--3color: blanchedalmond;
-	--4color: sandybrown;
-	--5color: hsl(30, 25%, 15%);
+	--color1: hsl(30, 10%, 20%);
+	--color2: mediumaquamarine;
+	--color3: blanchedalmond;
+	--color4: sandybrown;
+	--color5: hsl(30, 25%, 15%);
 }
 #forest {
 	--theme-type: light;
-	--1color: hsl(25, 80%, 18%);
-	--2color: hsl(65, 100%, 30%);
-	--3color: navajowhite;
-	--4color: lightcoral;
-	--5color: hsl(30, 10%, 15%);
+	--color1: hsl(25, 80%, 18%);
+	--color2: hsl(65, 100%, 30%);
+	--color3: navajowhite;
+	--color4: lightcoral;
+	--color5: hsl(30, 10%, 15%);
 }
 #pastel {
 	--theme-type: light;
-	--1color: hsl(0, 0%, 25%);
-	--2color: powderblue;
-	--3color: lightsalmon;
-	--4color: lemonchiffon;
-	--5color: hsl(0, 0%, 25%);
+	--color1: hsl(0, 0%, 25%);
+	--color2: powderblue;
+	--color3: lightsalmon;
+	--color4: lemonchiffon;
+	--color5: hsl(0, 0%, 25%);
 }
 #sunrise {
 	--theme-type: light;
-	--1color: hsl(315, 40%, 20%);
-	--2color: peachpuff;
-	--3color: lightcoral;
-	--4color: ivory;
-	--5color: hsl(315, 40%, 20%);
+	--color1: hsl(315, 40%, 20%);
+	--color2: peachpuff;
+	--color3: lightcoral;
+	--color4: ivory;
+	--color5: hsl(315, 40%, 20%);
 }
 #tundra {
 	--theme-type: light;
-	--1color: hsl(0, 0%, 25%);
-	--2color: hsl(200, 20%, 90%);
-	--3color: hsl(70, 75%, 60%);
-	--4color: hsl(80, 100%, 30%);
-	--5color: black;
+	--color1: hsl(0, 0%, 25%);
+	--color2: hsl(200, 20%, 90%);
+	--color3: hsl(70, 75%, 60%);
+	--color4: hsl(80, 100%, 30%);
+	--color5: black;
 }
 #red {
 	--theme-type: light;
-	--1color: hsl(45, 30%, 10%);
-	--2color: hsl(25, 100%, 90%);
-	--3color: hsl(10, 90%, 75%);
-	--4color: hsl(90, 100%, 30%);
-	--5color: black;
+	--color1: hsl(45, 30%, 10%);
+	--color2: hsl(25, 100%, 90%);
+	--color3: hsl(10, 90%, 75%);
+	--color4: hsl(90, 100%, 30%);
+	--color5: black;
 }
 #yellow {
 	--theme-type: light;
-	--1color: hsl(60, 30%, 10%);
-	--2color: lightyellow;
-	--3color: khaki;
-	--4color: hsl(0, 100%, 45%);
-	--5color: black;
+	--color1: hsl(60, 30%, 10%);
+	--color2: lightyellow;
+	--color3: khaki;
+	--color4: hsl(0, 100%, 45%);
+	--color5: black;
 }
 #green {
 	--theme-type: light;
-	--1color: hsl(75, 30%, 10%);
-	--2color: hsl(70, 100%, 90%);
-	--3color: hsl(80, 80%, 65%);
-	--4color: hsl(210, 100%, 50%);
-	--5color: black;
+	--color1: hsl(75, 30%, 10%);
+	--color2: hsl(70, 100%, 90%);
+	--color3: hsl(80, 80%, 65%);
+	--color4: hsl(210, 100%, 50%);
+	--color5: black;
 }
 #blue {
 	--theme-type: light;
-	--1color: hsl(0, 0%, 10%);
-	--2color: lightcyan;
-	--3color: lightskyblue;
-	--4color: hsl(25, 100%, 40%);
-	--5color: black;
+	--color1: hsl(0, 0%, 10%);
+	--color2: lightcyan;
+	--color3: lightskyblue;
+	--color4: hsl(25, 100%, 40%);
+	--color5: black;
 }

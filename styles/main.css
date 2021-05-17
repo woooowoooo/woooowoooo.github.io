@@ -69,10 +69,12 @@ button, input[type="submit"] {
 .teaser img {
 	display: block;
 	width: 240px;
-	background: var(--secondary-color) url(../images/no-teaser.png) no-repeat;
+	background: var(--secondary-color) url(../images/no-teaser.png);
 	color: transparent;
 	background-size: cover;
+	/* To cover both Firefox and Chrome */
 	image-rendering: crisp-edges;
+	image-rendering: pixelated;
 }
 .teaser img:before {
 	content: "";
