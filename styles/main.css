@@ -37,11 +37,14 @@ a {
 b {
 	font-size: 1.2em;
 }
-p, ul {
+p {
+	margin: 0 0 0.5em 0;
+}
+ul {
 	margin: 0.5em 0;
 }
 /* Button styling */
-button, .button {
+button, .button, input[type="submit"] {
 	width: 9.5em;
 	padding: 1.25em;
 	margin: 1em;
@@ -49,7 +52,7 @@ button, .button {
 	color: var(--accent-color);
 	transition-duration: 0.2s;
 }
-button {
+button, input[type="submit"] {
 	border: none;
 	font: 1em var(--font-stack);
 	cursor: pointer;
@@ -87,7 +90,6 @@ header {
 	padding: 20px;
 	background-color: var(--primary-color);
 	text-align: center;
-	line-height: 1.25;
 }
 header h1 {
 	flex: auto;
@@ -116,7 +118,7 @@ header h1 {
 	font-weight: normal;
 	transition-duration: 0.2s;
 }
-#navbar a.active, #navbar a:hover:not(.active), a:hover, button:hover {
+#navbar a.active, #navbar a:hover, a:hover, button:hover, input[type="submit"]:hover {
 	background-color: var(--accent-color);
 	color: var(--background-color);
 }
@@ -136,6 +138,7 @@ header h1 {
 	display: flex;
 	min-height: 300px;
 	background-color: var(--primary-color);
+	line-height: 1.3;
 }
 aside {
 	width: 20%;
