@@ -56,7 +56,7 @@ function createIcon(iconId, iconText, iconFunction) {
 	icon.id = iconId;
 	createText(icon, iconText);
 	header.appendChild(icon);
-	icon.addEventListener("click", iconFunction, false);
+	icon.addEventListener("click", iconFunction);
 	return icon;
 }
 function hide(element) {
