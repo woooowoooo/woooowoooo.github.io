@@ -1,3 +1,4 @@
+// IMPORTANT: DOES NOT WORK LOCALLY
 // Function declarations
 function getProperty(name) {
 	let style = window.getComputedStyle(event.target);

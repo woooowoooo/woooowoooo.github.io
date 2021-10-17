@@ -17,7 +17,7 @@
 	--secondary-color: hsl(35, 75%, 70%);
 	--accent-color: orangered;
 	--text-color: hsl(30, 25%, 15%);
-	--font-stack: Futura, Avenir, "Century Gothic", "URW Gothic", sans-serif;
+	--font-stack: Avenir, "Century Gothic", "URW Gothic", sans-serif;
 }
 body {
 	margin: 0;
@@ -162,8 +162,8 @@ footer {
 @media (prefers-color-scheme: dark) {
 	:root {
 		--background-color: hsl(30, 15%, 25%);
-		--primary-color: hsl(30, 30%, 10%);
-		--secondary-color: hsl(30, 25%, 15%);
+		--primary-color: hsl(30, 20%, 10%);
+		--secondary-color: hsl(30, 15%, 15%);
 		--accent-color: gold;
 		--text-color: linen;
 	}

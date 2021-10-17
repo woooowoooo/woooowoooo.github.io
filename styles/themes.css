@@ -6,6 +6,14 @@ button:hover {
 	background-color: var(--color3);
 	color: var(--color4);
 }
+#none {
+	--theme-type: none;
+	--color1: invalid;
+	--color2: invalid;
+	--color3: invalid;
+	--color4: invalid;
+	--color5: invalid;
+}
 #default {
 	--theme-type: light;
 	--color1: hsl(30, 10%, 20%);
@@ -17,18 +25,10 @@ button:hover {
 #dark {
 	--theme-type: dark;
 	--color1: hsl(30, 15%, 25%);
-	--color2: hsl(30, 30%, 10%);
-	--color3: hsl(30, 25%, 15%);
+	--color2: hsl(30, 20%, 10%);
+	--color3: hsl(30, 15%, 15%);
 	--color4: gold;
 	--color5: linen;
-}
-#none {
-	--theme-type: none;
-	--color1: invalid;
-	--color2: invalid;
-	--color3: invalid;
-	--color4: invalid;
-	--color5: invalid;
 }
 #grayscale {
 	--theme-type: light;
@@ -36,12 +36,12 @@ button:hover {
 	--color2: whitesmoke;
 	--color3: gainsboro;
 	--color4: gray;
-	--color5: hsl(0, 0%, 25%);
+	--color5: black;
 }
 #graydark {
 	--theme-type: dark;
 	--color1: hsl(0, 0%, 25%);
-	--color2: hsl(0, 0%, 5%);
+	--color2: hsl(0, 0%, 10%);
 	--color3: hsl(0, 0%, 15%);
 	--color4: silver;
 	--color5: whitesmoke;
@@ -110,6 +110,14 @@ button:hover {
 	--color4: red;
 	--color5: black;
 }
+#neutral {
+	--theme-type: light;
+	--color1: hsl(0, 0%, 20%);
+	--color2: whitesmoke;
+	--color3: hsl(40, 50%, 85%);
+	--color4: tan;
+	--color5: black;
+}
 #pastel {
 	--theme-type: light;
 	--color1: hsl(0, 0%, 25%);
@@ -129,38 +137,38 @@ button:hover {
 #tundra {
 	--theme-type: light;
 	--color1: hsl(0, 0%, 25%);
-	--color2: hsl(200, 20%, 90%);
-	--color3: hsl(70, 75%, 60%);
+	--color2: hsl(200, 10%, 90%);
+	--color3: hsl(70, 60%, 60%);
 	--color4: hsl(80, 100%, 30%);
 	--color5: black;
 }
 #red {
 	--theme-type: light;
-	--color1: hsl(45, 30%, 10%);
-	--color2: hsl(25, 100%, 90%);
-	--color3: hsl(10, 90%, 75%);
-	--color4: hsl(90, 100%, 30%);
+	--color1: hsl(30, 20%, 15%);
+	--color2: hsl(30, 100%, 90%);
+	--color3: hsl(15, 90%, 70%);
+	--color4: hsl(90, 100%, 40%);
 	--color5: black;
 }
 #yellow {
 	--theme-type: light;
-	--color1: hsl(60, 30%, 10%);
+	--color1: hsl(60, 20%, 15%);
 	--color2: lightyellow;
 	--color3: khaki;
-	--color4: hsl(0, 100%, 45%);
+	--color4: hsl(0, 100%, 50%);
 	--color5: black;
 }
 #green {
 	--theme-type: light;
-	--color1: hsl(75, 30%, 10%);
-	--color2: hsl(70, 100%, 90%);
-	--color3: hsl(80, 80%, 65%);
+	--color1: hsl(90, 20%, 15%);
+	--color2: hsl(80, 100%, 90%);
+	--color3: hsl(80, 70%, 65%);
 	--color4: hsl(210, 100%, 50%);
 	--color5: black;
 }
 #blue {
 	--theme-type: light;
-	--color1: hsl(0, 0%, 10%);
+	--color1: hsl(0, 0%, 15%);
 	--color2: lightcyan;
 	--color3: lightskyblue;
 	--color4: hsl(25, 100%, 40%);
