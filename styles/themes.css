@@ -9,18 +9,10 @@ button:hover {
 #default {
 	--theme-type: light;
 	--color1: hsl(30, 10%, 20%);
-	--color2: blanchedalmond;
-	--color3: hsl(35, 70%, 60%);
+	--color2: oldlace;
+	--color3: hsl(35, 75%, 70%);
 	--color4: orangered;
 	--color5: hsl(30, 25%, 15%);
-}
-#grayscale {
-	--theme-type: light;
-	--color1: hsl(0, 0%, 25%);
-	--color2: whitesmoke;
-	--color3: lightgray;
-	--color4: gray;
-	--color5: hsl(0, 0%, 25%);
 }
 #dark {
 	--theme-type: dark;
@@ -38,15 +30,23 @@ button:hover {
 	--color4: invalid;
 	--color5: invalid;
 }
-#neutral {
+#grayscale {
 	--theme-type: light;
-	--color1: hsl(0, 0%, 25%);
+	--color1: hsl(0, 0%, 20%);
 	--color2: whitesmoke;
-	--color3: skyblue;
-	--color4: red;
-	--color5: black;
+	--color3: gainsboro;
+	--color4: gray;
+	--color5: hsl(0, 0%, 25%);
 }
-#sollight {
+#graydark {
+	--theme-type: dark;
+	--color1: hsl(0, 0%, 25%);
+	--color2: hsl(0, 0%, 5%);
+	--color3: hsl(0, 0%, 15%);
+	--color4: silver;
+	--color5: whitesmoke;
+}
+#sollight { /* https://ethanschoonover.com/solarized/ */
 	--theme-type: light;
 	--color1: #073642;
 	--color2: #FDF6E3;
@@ -61,6 +61,22 @@ button:hover {
 	--color3: #002B36;
 	--color4: #DC322F;
 	--color5: #93A1A1;
+}
+#nordlight { /* https://www.nordtheme.com/docs/colors-and-palettes */
+	--theme-type: light;
+	--color1: #3B4252;
+	--color2: #ECEFF4;
+	--color3: #E5E9F0;
+	--color4: #BF616A;
+	--color5: #2E3440;
+}
+#norddark {
+	--theme-type: dark;
+	--color1: #434C5E;
+	--color2: #2E3440;
+	--color3: #3B4252;
+	--color4: #D08770;
+	--color5: #ECEFF4;
 }
 #aquatic {
 	--theme-type: light;
@@ -85,6 +101,14 @@ button:hover {
 	--color3: navajowhite;
 	--color4: lightcoral;
 	--color5: hsl(30, 10%, 15%);
+}
+#modern {
+	--theme-type: light;
+	--color1: hsl(0, 0%, 20%);
+	--color2: whitesmoke;
+	--color3: skyblue;
+	--color4: red;
+	--color5: black;
 }
 #pastel {
 	--theme-type: light;

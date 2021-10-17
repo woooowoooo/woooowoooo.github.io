@@ -13,8 +13,8 @@
 :root {
 	color-scheme: light dark;
 	--background-color: hsl(30, 10%, 20%);
-	--primary-color: blanchedalmond;
-	--secondary-color: hsl(35, 70%, 60%);
+	--primary-color: oldlace;
+	--secondary-color: hsl(35, 75%, 70%);
 	--accent-color: orangered;
 	--text-color: hsl(30, 25%, 15%);
 	--font-stack: Futura, Avenir, "Century Gothic", "URW Gothic", sans-serif;
@@ -45,9 +45,9 @@ p {
 }
 /* Button styling */
 button, .button, input[type="submit"] {
-	width: 9.5em;
+	width: 10em;
 	padding: 1.25em;
-	margin: 1em;
+	margin: 0.75em;
 	background-color: var(--background-color);
 	color: var(--accent-color);
 	transition-duration: 0.2s;
@@ -170,7 +170,7 @@ footer {
 }
 /* Responsive design */
 @media (max-width: 1080px) {
-	button {
+	button, .button, input[type="submit"] {
 		padding: 1em;
 		margin: 0.5em;
 	}
