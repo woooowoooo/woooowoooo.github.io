@@ -1,0 +1,14 @@
+body, #rickroll {
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	background-color: black;
+}
+h1 {
+	position: absolute;
+	width: 100vw;
+	text-align: center;
+	color: white;
+	font: 3em serif;
+}
