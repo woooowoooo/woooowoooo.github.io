@@ -170,7 +170,7 @@ footer {
 }
 /* Responsive design */
 @media (max-width: 1080px) {
-	button, .button, input[type="submit"] {
+	button {
 		padding: 1em;
 		margin: 0.5em;
 	}
