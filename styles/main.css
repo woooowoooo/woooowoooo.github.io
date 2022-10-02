@@ -127,7 +127,6 @@ header h1 {
 #open-icon, #close-icon {
 	display: none;
 	flex: none;
-	margin: 0;
 	writing-mode: vertical-rl;
 	font-size: 3em;
 	cursor: pointer;
@@ -235,11 +234,14 @@ footer {
 		flex-direction: column;
 	}
 	header h1 {
-		margin: 0.67rem;
+		margin: 1rem;
 	}
 	#open-icon, #close-icon {
-		width: 100%;
-		margin-top: calc(-5rem / 3);
-		margin-left: 0;
+		margin-top: calc(-4rem / 3);
+		margin-bottom: calc(2rem / 3);
+	}
+	#open-icon:not(.hidden), #close-icon:not(.hidden) { /* Center glyph */
+		display: flex;
+		align-items: center;
 	}
 }
