@@ -138,7 +138,7 @@ header h1 {
 /* Layout */
 #maindiv {
 	display: flex;
-	min-height: 300px;
+	min-height: max(300px, 100vh - 300px);
 	background-color: var(--primary-color);
 	line-height: 1.3;
 }
@@ -220,7 +220,7 @@ footer {
 	}
 	#maindiv {
 		flex-direction: column;
-		min-height: 0;
+		min-height: 100vh - 300px;
 	}
 	aside, main {
 		width: 100%;
