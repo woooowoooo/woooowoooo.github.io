@@ -86,7 +86,7 @@ const links = {
 	"about.html": "About",
 	"contact.html": "Contact",
 	"donate.html": "Donate",
-	"selector.html": "My Games",
+	"selector.html": "JS Things",
 	"themes.html": "Themes"
 };
 const pageName = pathArray[pathArray.length - 1];
