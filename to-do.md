@@ -56,19 +56,3 @@
 
 - [x] Automatic dark theme
 - [x] Separate dark mode stylesheet
-
-## Games:
-
-### Terrible adventure game:
-
-- [x] Basic canvas stuff
-- [x] Audio support
-- [x] Ease future image and audio loading
-- [ ] Menu screen buttons
-- [x] Loading screen
-- [ ] Create theme song
-- [x] Custom fonts
-
-### Jumping game:
-
-- [ ] Reformatting
