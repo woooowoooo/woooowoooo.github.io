@@ -8,19 +8,19 @@ const find = "woooowoooo.github.io";
 const childAmount = pathArray.length - pathArray.indexOf(find) - 2;
 const parentPath = "../".repeat(childAmount);
 // Theming
-let root = document.documentElement.style;
+const root = document.documentElement.style;
 const colorNames = ["background", "primary", "secondary", "accent", "text"];
 function setColor(name) {
 	root.setProperty("--" + name + "-color", localStorage.getItem(name + "Color"));
 }
 colorNames.forEach(setColor);
 // Meta
-let head = document.getElementsByTagName("head")[0];
-let title = document.createElement("title");
+const head = document.getElementsByTagName("head")[0];
+const title = document.createElement("title");
 createText(title, "woooowoooo's website");
 head.appendChild(title);
 function createMeta(name, content) {
-	let meta = document.createElement("meta");
+	const meta = document.createElement("meta");
 	meta.name = name;
 	meta.content = content;
 	head.appendChild(meta);
@@ -29,7 +29,7 @@ createMeta("description", "A personal website.");
 createMeta("author", "woooowoooo");
 createMeta("viewport", "width=device-width, initial-scale=1.0");
 function createLink(relation, destination, append) {
-	let link = document.createElement("link");
+	const link = document.createElement("link");
 	link.rel = relation;
 	link.href = parentPath + destination;
 	if (append) {
@@ -39,20 +39,20 @@ function createLink(relation, destination, append) {
 }
 createLink("icon", "favicon.ico", true);
 // Theme stylesheets
-let darkStylesheet = createLink("stylesheet", "styles/dark.css", false);
-const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+const darkStylesheet = createLink("stylesheet", "styles/dark.css", false);
+let darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
 let themeType = localStorage.getItem("themeType");
 if (darkQuery.matches && themeType === null || themeType === "dark") {
 	head.appendChild(darkStylesheet);
 }
-let noneStylesheet = createLink("stylesheet", "styles/none.css", false);
+const noneStylesheet = createLink("stylesheet", "styles/none.css", false);
 if (themeType === "none") {
 	head.appendChild(noneStylesheet);
 }
 // Header
-let header = document.getElementsByTagName("header")[0];
+const header = document.getElementsByTagName("header")[0];
 function createIcon(iconId, iconText, iconFunction) {
-	let icon = document.createElement("h1");
+	const icon = document.createElement("h1");
 	icon.id = iconId;
 	createText(icon, iconText);
 	header.appendChild(icon);
@@ -65,19 +65,19 @@ function hide(element) {
 function unhide(element) {
 	element.classList.remove("hidden");
 };
-let openIcon = createIcon("open-icon", "⟫", function () {
+const openIcon = createIcon("open-icon", "⟫", function () {
 	unhide(navbar);
 	unhide(closeIcon);
 	hide(openIcon);
 });
-let closeIcon = createIcon("close-icon", "⟪", function () {
+const closeIcon = createIcon("close-icon", "⟪", function () {
 	hide(navbar);
 	hide(closeIcon);
 	unhide(openIcon);
 });
 hide(closeIcon);
 // Navbar
-let navbar = document.getElementById("navbar");
+const navbar = document.getElementById("navbar");
 navbar.innerHTML = "";
 navbar.classList.add("hidden"); // Navbar is shown if JS is disabled.
 const links = {
@@ -91,9 +91,9 @@ const links = {
 };
 const pageName = pathArray[pathArray.length - 1];
 function createNavbarLink(page) {
-	let li = document.createElement("li");
+	const li = document.createElement("li");
 	navbar.appendChild(li);
-	let a = document.createElement("a");
+	const a = document.createElement("a");
 	a.href = parentPath + page;
 	a.textContent = links[page];
 	li.appendChild(a);
@@ -102,14 +102,14 @@ function createNavbarLink(page) {
 	}
 }
 Object.keys(links).forEach(createNavbarLink);
-let themes = navbar.lastChild;
+const themes = navbar.lastChild;
 themes.classList.add("right");
 // Footer
-let footer = document.getElementsByTagName("footer")[0];
+const footer = document.getElementsByTagName("footer")[0];
 footer.innerHTML = "";
-let footerText = document.createElement("p");
+const footerText = document.createElement("p");
 createText(footerText, "Made by woooowoooo. Check out this website's ");
-let githubLink = document.createElement("a");
+const githubLink = document.createElement("a");
 githubLink.href = "https://github.com/woooowoooo/woooowoooo.github.io/";
 createText(githubLink, "source code.");
 footerText.appendChild(githubLink);
