@@ -41,9 +41,16 @@ createLink("icon", "favicon.ico", true);
 const darkStylesheet = createLink("stylesheet", "styles/dark.css", false);
 let darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
 let themeType = localStorage.getItem("themeType");
-if (darkQuery.matches && themeType === null || themeType === "dark") {
-	head.appendChild(darkStylesheet);
+function updateDarkSheet(query) {
+	themeType = localStorage.getItem("themeType");
+	if (query.matches && themeType === null || themeType === "dark") {
+		head.appendChild(darkStylesheet);
+	} else if (head.contains(darkStylesheet)) {
+		head.removeChild(darkStylesheet);
+	}
 }
+updateDarkSheet(darkQuery);
+darkQuery.addEventListener("change", updateDarkSheet);
 const noneStylesheet = createLink("stylesheet", "styles/none.css", false);
 if (themeType === "none") {
 	head.appendChild(noneStylesheet);
