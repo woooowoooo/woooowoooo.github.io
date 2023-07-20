@@ -10,10 +10,9 @@ const parentPath = "../".repeat(childAmount);
 // Theming
 const root = document.documentElement.style;
 const colorNames = ["background", "primary", "secondary", "accent", "text"];
-function setColor(name) {
-	root.setProperty("--" + name + "-color", localStorage.getItem(name + "Color"));
+for (const name of colorNames) {
+	root.setProperty(`--${name}-color`, localStorage.getItem(`${name}Color`));
 }
-colorNames.forEach(setColor);
 // Meta
 const head = document.getElementsByTagName("head")[0];
 const title = document.createElement("title");
